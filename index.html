@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Rebeca Magalhães</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='8' fill='%23A08050' stroke='%237A6040' stroke-width='1'/><g fill='%23E8D9A0' stroke='%23B8A060' stroke-width='0.6'><ellipse cx='32' cy='14' rx='5' ry='12'/><ellipse cx='32' cy='50' rx='5' ry='12'/><ellipse cx='14' cy='32' rx='12' ry='5'/><ellipse cx='50' cy='32' rx='12' ry='5'/><ellipse cx='19' cy='19' rx='5' ry='12' transform='rotate(45 19 19)'/><ellipse cx='45' cy='45' rx='5' ry='12' transform='rotate(45 45 45)'/><ellipse cx='45' cy='19' rx='5' ry='12' transform='rotate(-45 45 19)'/><ellipse cx='19' cy='45' rx='5' ry='12' transform='rotate(-45 19 45)'/></g><g fill='%235B7A5E' stroke='%23476248' stroke-width='0.5'><ellipse cx='48' cy='56' rx='10' ry='4' transform='rotate(-30 48 56)'/></g></svg>" type="image/svg+xml">
+  <style>
+    /* ===== CALLIGRAPHIC FONT (Brittany-style via SVG path fallback) ===== */
+    @font-face {
+      font-family: 'Calligraphy';
+      src: local('Brittany Signature'), local('Dancing Script'), local('Great Vibes'), local('Parisienne'), local('Alex Brush'), local('Allura'), local('Sacramento');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ===== LIGHT THEME (default) ===== */
+    :root,
+    [data-theme="light"] {
+      --color-bg: #F5F0EB;
+      --color-cream: #EDE6DC;
+      --color-beige: #D9CCBC;
+      --color-taupe: #B8A99A;
+      --color-taupe-dark: #9A8B7A;
+      --color-brown: #7A6B5A;
+      --color-green: #5B7A5E;
+      --color-green-light: #6E8E71;
+      --color-text: #4A3F35;
+      --color-text-light: #8A7D70;
+      --color-white: #FDFBF8;
+      --color-card-bg: #FDFBF8;
+      --color-alt-bg: #FDFBF8;
+      --nav-bg: rgba(245, 240, 235, 0.95);
+      --color-contato-bg: #7A6B5A;
+      --color-contato-text: #EDE6DC;
+      --color-footer-bg: #4A3F35;
+      --color-input-bg: rgba(255,255,255,0.08);
+      --color-input-border: rgba(255,255,255,0.15);
+    }
+
+    /* ===== DARK THEME ===== */
+    [data-theme="dark"] {
+      --color-bg: #1C1915;
+      --color-cream: #2A2520;
+      --color-beige: #3D362E;
+      --color-taupe: #7A6E60;
+      --color-taupe-dark: #9A8D7E;
+      --color-brown: #C4B5A2;
+      --color-green: #7BA37E;
+      --color-green-light: #8FB892;
+      --color-text: #E8E0D6;
+      --color-text-light: #A69D90;
+      --color-white: #232019;
+      --color-card-bg: #262220;
+      --color-alt-bg: #201D19;
+      --nav-bg: rgba(28, 25, 21, 0.95);
+      --color-contato-bg: #2A2520;
+      --color-contato-text: #C4B5A2;
+      --color-footer-bg: #141210;
+      --color-input-bg: rgba(255,255,255,0.06);
+      --color-input-border: rgba(255,255,255,0.1);
+    }
+
+    /* ===== TRANSITION ===== */
+    html { transition: background-color 0.4s ease, color 0.4s ease; }
+    body, nav, section, footer, .servico-card, .depoimento-card, .estudo-item, .estudo-tag {
+      transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-beige);
+      transition: box-shadow 0.3s ease, background-color 0.4s ease;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 2px 20px rgba(122, 107, 90, 0.1);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Calligraphy', 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      color: var(--color-green);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-taupe-dark);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--color-brown);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--color-brown); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* ===== THEME TOGGLE ===== */
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--color-taupe);
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-taupe-dark);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--color-brown);
+      color: var(--color-brown);
+    }
+
+    .theme-toggle svg {
+      width: 16px; height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+    /* ===== HAMBURGER ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--color-brown);
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 40px 80px;
+      position: relative;
+      background: linear-gradient(180deg, var(--color-white) 0%, var(--color-bg) 100%);
+      overflow: hidden;
+    }
+
+    .hero-sunflower {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: auto;
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-sunflower-left {
+      position: absolute;
+      left: -80px;
+      bottom: -40px;
+      width: 300px;
+      height: auto;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 1;
+      transform: scaleX(-1) rotate(15deg);
+    }
+
+    /* Floating petals */
+    .petal {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      animation: petalFloat linear infinite;
+    }
+
+    .petal svg {
+      filter: drop-shadow(0 2px 4px rgba(122, 107, 90, 0.1));
+    }
+
+    .petal:nth-child(1) { left: 8%; top: 15%; animation-duration: 18s; animation-delay: 0s; }
+    .petal:nth-child(2) { left: 20%; top: 60%; animation-duration: 22s; animation-delay: 3s; }
+    .petal:nth-child(3) { right: 15%; top: 25%; animation-duration: 20s; animation-delay: 1s; }
+    .petal:nth-child(4) { right: 25%; top: 70%; animation-duration: 24s; animation-delay: 5s; }
+    .petal:nth-child(5) { left: 40%; top: 10%; animation-duration: 19s; animation-delay: 7s; }
+    .petal:nth-child(6) { right: 8%; top: 55%; animation-duration: 21s; animation-delay: 2s; }
+    .petal:nth-child(7) { left: 12%; top: 80%; animation-duration: 23s; animation-delay: 4s; }
+    .petal:nth-child(8) { right: 35%; top: 8%; animation-duration: 17s; animation-delay: 6s; }
+    .petal:nth-child(9) { left: 55%; top: 75%; animation-duration: 20s; animation-delay: 1.5s; }
+    .petal:nth-child(10) { right: 45%; top: 20%; animation-duration: 25s; animation-delay: 8s; }
+    .petal:nth-child(11) { left: 75%; top: 40%; animation-duration: 16s; animation-delay: 0.5s; }
+    .petal:nth-child(12) { left: 30%; top: 85%; animation-duration: 21s; animation-delay: 9s; }
+    .petal:nth-child(13) { right: 12%; top: 80%; animation-duration: 19s; animation-delay: 3.5s; }
+    .petal:nth-child(14) { left: 65%; top: 5%; animation-duration: 23s; animation-delay: 10s; }
+    .petal:nth-child(15) { right: 55%; top: 45%; animation-duration: 18s; animation-delay: 5.5s; }
+    .petal:nth-child(16) { left: 5%; top: 45%; animation-duration: 26s; animation-delay: 7.5s; }
+
+    @keyframes petalFloat {
+      0% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
+      10% { opacity: 0.35; }
+      50% { opacity: 0.25; }
+      90% { opacity: 0.3; }
+      100% { opacity: 0; transform: translateY(-80px) rotate(360deg) scale(1); }
+    }
+
+    .hero > *:not(.petal):not(.hero-sunflower):not(.hero-sunflower-left) { position: relative; z-index: 3; }
+
+    .hero-decoration {
+      width: 60px; height: 1.5px;
+      background: var(--color-taupe);
+      margin-bottom: 32px;
+    }
+
+    .hero h1 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--color-green);
+      margin-bottom: 0;
+      line-height: 1.3;
+      letter-spacing: 2px;
+    }
+
+    .hero .hero-ao {
+      display: block;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      color: var(--color-green);
+      letter-spacing: 3px;
+      margin-top: 4px;
+    }
+
+    .hero .hero-name {
+      display: block;
+      font-family: 'Calligraphy', 'Dancing Script', cursive;
+      font-style: normal;
+      font-size: clamp(3.2rem, 7vw, 5.5rem);
+      color: var(--color-green);
+      line-height: 1.1;
+      margin: 8px 0 4px;
+      letter-spacing: 1px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-taupe-dark);
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .hero-text {
+      max-width: 540px;
+      color: var(--color-text-light);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-taupe);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .scroll-indicator svg {
+      width: 20px; height: 20px;
+      stroke: var(--color-taupe);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ===== SECTIONS ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--color-green);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--color-brown);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    /* ===== BRIEFING ===== */
+    .briefing {
+      background: var(--color-alt-bg);
+    }
+
+    .briefing-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .briefing-content .section-title {
+      text-align: center;
+    }
+
+    .briefing-content .section-label {
+      text-align: center;
+    }
+
+    .briefing-text {
+      columns: 2;
+      column-gap: 48px;
+      margin-top: 32px;
+    }
+
+    .briefing-text p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      break-inside: avoid;
+    }
+
+    .briefing-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .briefing-value {
+      text-align: center;
+    }
+
+    .briefing-value h3 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: var(--color-brown);
+      margin-bottom: 8px;
+    }
+
+    .briefing-value p {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== ONDE NOS ACHAR ===== */
+    .onde-achar {
+      background: var(--color-cream);
+    }
+
+    .onde-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 40px;
+    }
+
+    .onde-map {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--color-beige), var(--color-taupe));
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .onde-map::after {
+      content: 'Mapa';
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-white);
+      background: rgba(0,0,0,0.15);
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+
+    .onde-info { padding-top: 8px; }
+
+    .onde-info p.onde-desc {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .onde-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .onde-item-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .onde-item-icon svg {
+      width: 20px; height: 20px;
+      stroke: var(--color-brown);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .onde-item-text h4 {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-taupe-dark);
+      margin-bottom: 4px;
+    }
+
+    .onde-item-text p {
+      color: var(--color-text);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .onde-item-text a {
+      color: var(--color-brown);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-beige);
+      transition: border-color 0.3s;
+    }
+
+    .onde-item-text a:hover {
+      border-color: var(--color-brown);
+    }
+
+    /* ===== SOBRE ===== */
+    .sobre { background: var(--color-alt-bg); }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-image {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sobre-image::after {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(122, 107, 90, 0.2);
+      border-radius: 2px;
+    }
+
+    .sobre-text p { color: var(--color-text-light); margin-bottom: 20px; font-size: 0.95rem; }
+
+    /* ===== SERVIÇOS ===== */
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .servico-card {
+      background: var(--color-card-bg);
+      padding: 40px 32px;
+      border-radius: 4px;
+      border: 1px solid var(--color-beige);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .servico-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--color-taupe);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .servico-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(122, 107, 90, 0.1); }
+    .servico-card:hover::before { transform: scaleX(1); }
+
+    .servico-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--color-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.2rem;
+    }
+
+    .servico-card h3 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--color-brown);
+      margin-bottom: 12px;
+    }
+
+    .servico-card p { color: var(--color-text-light); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ===== ESTUDOS ===== */
+    .estudos { background: var(--color-alt-bg); }
+
+    .estudos-list { margin-top: 48px; display: flex; flex-direction: column; gap: 24px; }
+
+    .estudo-item {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 32px;
+      align-items: center;
+      padding: 28px 32px;
+      background: var(--color-bg);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .estudo-item:hover { background: var(--color-cream); }
+
+    .estudo-date { font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; color: var(--color-taupe); }
+
+    .estudo-info h3 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic; font-weight: 400; font-size: 1.15rem;
+      color: var(--color-brown); margin-bottom: 4px;
+    }
+
+    .estudo-info p { font-size: 0.85rem; color: var(--color-text-light); }
+
+    .estudo-tag {
+      font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--color-taupe-dark);
+      background: var(--color-card-bg);
+      padding: 6px 14px; border-radius: 20px;
+    }
+
+    /* ===== DEPOIMENTOS ===== */
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .depoimento-card {
+      background: var(--color-card-bg);
+      padding: 40px; border-radius: 4px;
+      border: 1px solid var(--color-beige);
+      position: relative;
+    }
+
+    .depoimento-card::before {
+      content: '\201C';
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 4rem; color: var(--color-beige);
+      position: absolute; top: 16px; left: 32px; line-height: 1;
+    }
+
+    .depoimento-card blockquote {
+      font-style: italic; color: var(--color-text-light);
+      font-size: 0.95rem; line-height: 1.8;
+      margin-bottom: 20px; padding-top: 16px;
+    }
+
+    .depoimento-author {
+      font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--color-taupe-dark);
+    }
+
+    /* ===== NOSSO ESPAÇO ===== */
+    .espaco { background: var(--color-alt-bg); }
+
+    .espaco-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px; margin-top: 48px;
+    }
+
+    .espaco-item {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
+      border-radius: 4px;
+      position: relative; overflow: hidden; cursor: pointer;
+    }
+
+    .espaco-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: 1; }
+
+    .espaco-item .espaco-label {
+      position: absolute; bottom: 16px; left: 16px;
+      font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--color-brown);
+      background: rgba(253, 251, 248, 0.9);
+      padding: 6px 12px; border-radius: 2px;
+    }
+
+    /* ===== EQUIPE ===== */
+    .equipe-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px; margin-top: 48px;
+    }
+
+    .equipe-card { text-align: center; }
+
+    .equipe-avatar {
+      width: 120px; height: 120px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
+      margin: 0 auto 20px;
+    }
+
+    .equipe-card h3 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic; font-weight: 400; font-size: 1.1rem;
+      color: var(--color-brown); margin-bottom: 4px;
+    }
+
+    .equipe-card p { font-size: 0.8rem; color: var(--color-taupe); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ===== CONTATO ===== */
+    .contato {
+      background: var(--color-contato-bg);
+      color: var(--color-contato-text);
+    }
+
+    .contato .section-label { color: var(--color-taupe); }
+    .contato .section-title { color: var(--color-contato-text); }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px; margin-top: 40px;
+    }
+
+    .contato-info p { color: var(--color-beige); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.8; }
+
+    .contato-detail {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px; color: var(--color-beige); font-size: 0.9rem;
+    }
+
+    .contato-detail svg { width: 18px; height: 18px; stroke: var(--color-taupe); flex-shrink: 0; }
+
+    .contato-form { display: flex; flex-direction: column; gap: 16px; }
+
+    .contato-form input,
+    .contato-form textarea {
+      background: var(--color-input-bg);
+      border: 1px solid var(--color-input-border);
+      border-radius: 4px;
+      padding: 14px 18px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--color-contato-text);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .contato-form input::placeholder,
+    .contato-form textarea::placeholder { color: var(--color-taupe); }
+
+    .contato-form input:focus,
+    .contato-form textarea:focus { border-color: var(--color-taupe); }
+
+    .contato-form textarea { resize: vertical; min-height: 120px; }
+
+    .btn {
+      display: inline-block;
+      background: var(--color-cream);
+      color: var(--color-brown);
+      border: none;
+      padding: 14px 36px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s;
+      align-self: flex-start;
+    }
+
+    .btn:hover { background: var(--color-white); transform: translateY(-2px); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--color-footer-bg);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p { color: var(--color-taupe); font-size: 0.8rem; letter-spacing: 1px; }
+
+    footer .footer-logo {
+      font-family: 'Calligraphy', 'Dancing Script', cursive;
+      color: var(--color-green-light);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .theme-toggle span.toggle-label { display: none; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--color-bg);
+        padding: 24px 40px;
+        gap: 20px;
+        border-bottom: 1px solid var(--color-beige);
+      }
+
+      .sobre-grid, .onde-grid { grid-template-columns: 1fr; gap: 40px; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .depoimentos-grid { grid-template-columns: 1fr; }
+      .espaco-grid { grid-template-columns: 1fr 1fr; }
+      .espaco-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
+      .equipe-grid { grid-template-columns: repeat(2, 1fr); }
+      .contato-grid { grid-template-columns: 1fr; gap: 40px; }
+      .estudo-item { grid-template-columns: 1fr; gap: 8px; }
+      .estudo-tag { justify-self: start; }
+      .briefing-text { columns: 1; }
+      .briefing-values { grid-template-columns: 1fr; gap: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .container { padding: 0 24px; }
+      .nav-inner { padding: 14px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .espaco-grid { grid-template-columns: 1fr; }
+      .espaco-item:first-child { grid-column: span 1; }
+      .equipe-grid { grid-template-columns: 1fr; }
+    }
+
+    footer { padding-bottom: 80px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="images/logo-girassol.png" alt="Logo" class="nav-logo-img">
+        <span>Instituto Rebeca Magalhães</span>
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#briefing">O Instituto</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#estudos">Estudos</a></li>
+          <li><a href="#equipe">Equipe</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span class="toggle-label">Tema</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Sunflower decorations -->
+    <img src="images/logo-girassol.png" alt="" class="hero-sunflower">
+    <img src="images/logo-girassol.png" alt="" class="hero-sunflower-left">
+
+    <!-- Floating petals -->
+    <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="30" height="16" viewBox="0 0 30 16"><path d="M2 8c0-3.5 5.5-7 13-7s13 3.5 13 7-5.5 7-13 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M15 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="24" height="14" viewBox="0 0 24 14"><path d="M2 7c0-3 4-6 10-6s10 3 10 6-4 6-10 6S2 10 2 7z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M12 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="30" height="16" viewBox="0 0 30 16"><path d="M2 8c0-3.5 5.5-7 13-7s13 3.5 13 7-5.5 7-13 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M15 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+
+    <div class="petal"><svg width="30" height="16" viewBox="0 0 30 16"><path d="M2 8c0-3.5 5.5-7 13-7s13 3.5 13 7-5.5 7-13 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M15 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="38" height="20" viewBox="0 0 38 20"><path d="M2 10c0-4.5 7.5-9 17-9s17 4.5 17 9-7.5 9-17 9S2 14.5 2 10z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M19 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="22" height="12" viewBox="0 0 22 12"><path d="M2 6c0-2.5 3.5-5 9-5s9 2.5 9 5-3.5 5-9 5S2 8.5 2 6z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M11 1v10" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M2 11c0-5 8-10 18-10s18 5 18 10-8 10-18 10S2 16 2 11z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M20 1v20" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+
+    <div class="hero-decoration"></div>
+    <h1><span class="hero-name">Instituto Rebeca Magalhães</span></h1>
+    <p class="hero-subtitle">Psicologia &middot; Atendimento &middot; Estudos</p>
+    <p class="hero-text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+    </p>
+    <div class="scroll-indicator">
+      <span>Explore</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- BRIEFING -->
+  <section class="briefing" id="briefing">
+    <div class="container">
+      <div class="briefing-content">
+        <p class="section-label fade-in">O Instituto</p>
+        <h2 class="section-title fade-in">Quem somos e no que acreditamos</h2>
+        <div class="briefing-text fade-in">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a. Proin consequat auctor diam, id maximus erat pretium ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+          <p>Nulla facilisi. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+        </div>
+        <div class="briefing-values fade-in">
+          <div class="briefing-value">
+            <h3>Missão</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+          </div>
+          <div class="briefing-value">
+            <h3>Visão</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+          </div>
+          <div class="briefing-value">
+            <h3>Valores</h3>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONDE NOS ACHAR -->
+  <section class="onde-achar" id="onde-achar">
+    <div class="container">
+      <p class="section-label fade-in">Onde nos achar</p>
+      <h2 class="section-title fade-in">Venha nos visitar</h2>
+      <div class="onde-grid">
+        <div class="onde-map fade-in"></div>
+        <div class="onde-info fade-in">
+          <p class="onde-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Agende seu horário pelo telefone ou e-mail.</p>
+          <div class="onde-item">
+            <div class="onde-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="onde-item-text">
+              <h4>Endereço</h4>
+              <p>Rua Lorem Ipsum, 123, Sala 45<br>Bairro Dolor Sit — Cidade, Estado<br>CEP 00000-000</p>
+            </div>
+          </div>
+          <div class="onde-item">
+            <div class="onde-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="onde-item-text">
+              <h4>Telefone / WhatsApp</h4>
+              <p><a href="tel:+5500000000000">(00) 00000-0000</a></p>
+            </div>
+          </div>
+          <div class="onde-item">
+            <div class="onde-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="onde-item-text">
+              <h4>E-mail</h4>
+              <p><a href="mailto:contato@institutorebeca.com.br">contato@institutorebeca.com.br</a></p>
+            </div>
+          </div>
+          <div class="onde-item">
+            <div class="onde-item-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="onde-item-text">
+              <h4>Horário de Atendimento</h4>
+              <p>Seg — Sex: 8h às 20h<br>Sáb: 8h às 14h</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="container">
+      <p class="section-label fade-in">Serviços</p>
+      <h2 class="section-title fade-in">O que oferecemos</h2>
+      <div class="servicos-grid">
+        <div class="servico-card fade-in">
+          <div class="servico-icon">&#9672;</div>
+          <h3>Atendimento Clínico</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo.</p>
+        </div>
+        <div class="servico-card fade-in">
+          <div class="servico-icon">&#9670;</div>
+          <h3>Psicoterapia de Grupo</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+        <div class="servico-card fade-in">
+          <div class="servico-icon">&#9711;</div>
+          <h3>Avaliação Psicológica</h3>
+          <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTUDOS -->
+  <section class="estudos" id="estudos">
+    <div class="container">
+      <p class="section-label fade-in">Estudos & Pesquisas</p>
+      <h2 class="section-title fade-in">Produção acadêmica</h2>
+      <div class="estudos-list">
+        <div class="estudo-item fade-in">
+          <span class="estudo-date">Set 2024</span>
+          <div class="estudo-info">
+            <h3>Zoom para o Público</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+          </div>
+          <span class="estudo-tag">Webinar</span>
+        </div>
+        <div class="estudo-item fade-in">
+          <span class="estudo-date">Jun 2024</span>
+          <div class="estudo-info">
+            <h3>Segunda Meeting Anual</h3>
+            <p>Vivamus lacinia odio vitae vestibulum vestibulum cras porttitor.</p>
+          </div>
+          <span class="estudo-tag">Encontro</span>
+        </div>
+        <div class="estudo-item fade-in">
+          <span class="estudo-date">Mar 2024</span>
+          <div class="estudo-info">
+            <h3>Perspectivas em Psicologia Clínica</h3>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
+          </div>
+          <span class="estudo-tag">Publicação</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="depoimentos" id="depoimentos">
+    <div class="container">
+      <p class="section-label fade-in">Depoimentos</p>
+      <h2 class="section-title fade-in">O que dizem sobre nós</h2>
+      <div class="depoimentos-grid">
+        <div class="depoimento-card fade-in">
+          <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a.</blockquote>
+          <p class="depoimento-author">Maria S.</p>
+        </div>
+        <div class="depoimento-card fade-in">
+          <blockquote>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo.</blockquote>
+          <p class="depoimento-author">João P.</p>
+        </div>
+        <div class="depoimento-card fade-in">
+          <blockquote>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur.</blockquote>
+          <p class="depoimento-author">Ana L.</p>
+        </div>
+        <div class="depoimento-card fade-in">
+          <blockquote>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</blockquote>
+          <p class="depoimento-author">Carlos R.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSSO ESPAÇO -->
+  <section class="espaco" id="espaco">
+    <div class="container">
+      <p class="section-label fade-in">Nosso Espaço</p>
+      <h2 class="section-title fade-in">Conheça nossas salas</h2>
+      <div class="espaco-grid fade-in">
+        <div class="espaco-item"><span class="espaco-label">Recepção</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala 01</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala 02</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala 03</span></div>
+        <div class="espaco-item"><span class="espaco-label">Jardim</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPE -->
+  <section class="equipe" id="equipe">
+    <div class="container">
+      <p class="section-label fade-in">Equipe</p>
+      <h2 class="section-title fade-in">Nossos profissionais</h2>
+      <div class="equipe-grid">
+        <div class="equipe-card fade-in">
+          <div class="equipe-avatar"></div>
+          <h3>Rebeca Magalhães</h3>
+          <p>Diretora &middot; CRP 00/0000</p>
+        </div>
+        <div class="equipe-card fade-in">
+          <div class="equipe-avatar"></div>
+          <h3>Lorem Ipsum</h3>
+          <p>Psicóloga Clínica</p>
+        </div>
+        <div class="equipe-card fade-in">
+          <div class="equipe-avatar"></div>
+          <h3>Dolor Amet</h3>
+          <p>Psicólogo</p>
+        </div>
+        <div class="equipe-card fade-in">
+          <div class="equipe-avatar"></div>
+          <h3>Sit Consectetur</h3>
+          <p>Pesquisadora</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <p class="section-label fade-in">Contato</p>
+      <h2 class="section-title fade-in">Fale conosco</h2>
+      <div class="contato-grid">
+        <div class="contato-info fade-in">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="contato-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>(00) 00000-0000</span>
+          </div>
+          <div class="contato-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>contato@institutorebeca.com.br</span>
+          </div>
+          <div class="contato-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Rua Lorem Ipsum, 123 — Cidade, Estado</span>
+          </div>
+        </div>
+        <form class="contato-form fade-in" onsubmit="event.preventDefault()">
+          <input type="text" placeholder="Nome">
+          <input type="email" placeholder="E-mail">
+          <textarea placeholder="Mensagem"></textarea>
+          <button class="btn" type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-logo">Instituto Rebeca Magalhães</p>
+    <p>&copy; 2024 Instituto Rebeca Magalhães. Lorem ipsum dolor sit amet.</p>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    // Check saved preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      html.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      html.setAttribute('data-theme', 'dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
