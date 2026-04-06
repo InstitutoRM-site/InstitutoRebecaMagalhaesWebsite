@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instituto Rebeca Magalhães</title>
-  <link rel="icon" href="images/Logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
+  <link rel="apple-touch-icon" href="images/Logo.png">
+  <link rel="shortcut icon" href="images/Logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Times+New+Roman&display=swap" rel="stylesheet">
   <style>
-    /* ===== LIGHT THEME ===== */
+    /* ===== CALLIGRAPHIC FONT ===== */
+    @font-face {
+      font-family: 'Calligraphy';
+      src: local('Great Vibes'), local('Pinyon Script'), local('Brittany Signature'), local('Dancing Script'), local('Parisienne'), local('Alex Brush'), local('Allura'), local('Sacramento');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* ===== LIGHT THEME (default) ===== */
     :root,
     [data-theme="light"] {
       --color-bg: #F5F0EB;
@@ -86,7 +93,9 @@
       transition: box-shadow 0.3s ease, background-color 0.4s ease;
     }
 
-    nav.scrolled { box-shadow: 0 2px 20px rgba(122, 107, 90, 0.1); }
+    nav.scrolled {
+      box-shadow: 0 2px 20px rgba(122, 107, 90, 0.1);
+    }
 
     .nav-inner {
       max-width: 1200px;
@@ -98,7 +107,7 @@
     }
 
     .nav-logo {
-      font-family: 'Great Vibes', 'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       font-size: 1.3rem;
       color: var(--color-green);
       text-decoration: none;
@@ -269,13 +278,31 @@
     .petal:nth-child(14) { left: 65%; top: 5%; animation-duration: 23s; animation-delay: 10s; }
     .petal:nth-child(15) { right: 55%; top: 45%; animation-duration: 18s; animation-delay: 5.5s; }
     .petal:nth-child(16) { left: 5%; top: 45%; animation-duration: 26s; animation-delay: 7.5s; }
+    .petal:nth-child(17) { left: 18%; top: 30%; animation-duration: 20s; animation-delay: 11s; }
+    .petal:nth-child(18) { right: 20%; top: 50%; animation-duration: 22s; animation-delay: 2.5s; }
+    .petal:nth-child(19) { left: 48%; top: 90%; animation-duration: 17s; animation-delay: 12s; }
+    .petal:nth-child(20) { right: 40%; top: 65%; animation-duration: 24s; animation-delay: 0.8s; }
+    .petal:nth-child(21) { left: 82%; top: 20%; animation-duration: 19s; animation-delay: 6.5s; }
+    .petal:nth-child(22) { left: 35%; top: 55%; animation-duration: 21s; animation-delay: 13s; }
+    .petal:nth-child(23) { right: 5%; top: 35%; animation-duration: 25s; animation-delay: 4.5s; }
+    .petal:nth-child(24) { left: 60%; top: 85%; animation-duration: 18s; animation-delay: 14s; }
+    .petal:nth-child(25) { right: 30%; top: 15%; animation-duration: 23s; animation-delay: 1.2s; }
+    .petal:nth-child(26) { left: 90%; top: 60%; animation-duration: 20s; animation-delay: 9.5s; }
+    .petal:nth-child(27) { left: 3%; top: 70%; animation-duration: 26s; animation-delay: 15s; }
+    .petal:nth-child(28) { right: 18%; top: 90%; animation-duration: 16s; animation-delay: 3.2s; }
+    .petal:nth-child(29) { left: 72%; top: 12%; animation-duration: 22s; animation-delay: 10.5s; }
+    .petal:nth-child(30) { left: 25%; top: 42%; animation-duration: 19s; animation-delay: 7.8s; }
+    .petal:nth-child(31) { right: 50%; top: 78%; animation-duration: 24s; animation-delay: 16s; }
+    .petal:nth-child(32) { left: 15%; top: 5%; animation-duration: 21s; animation-delay: 5.2s; }
 
     @keyframes petalFloat {
       0% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
-      10% { opacity: 0.35; }
+      10% { opacity: 0.4; }
+      30% { opacity: 0.3; }
       50% { opacity: 0.25; }
+      70% { opacity: 0.35; }
       90% { opacity: 0.3; }
-      100% { opacity: 0; transform: translateY(-80px) rotate(360deg) scale(1); }
+      100% { opacity: 0; transform: translateY(-100px) rotate(420deg) scale(1.1); }
     }
 
     .hero > *:not(.petal):not(.hero-sunflower):not(.hero-sunflower-left) { position: relative; z-index: 3; }
@@ -297,9 +324,19 @@
       letter-spacing: 2px;
     }
 
+    .hero .hero-ao {
+      display: block;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      color: var(--color-green);
+      letter-spacing: 3px;
+      margin-top: 4px;
+    }
+
     .hero .hero-name {
       display: block;
-      font-family: 'Great Vibes', 'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       font-style: normal;
       font-size: clamp(3.2rem, 7vw, 5.5rem);
       color: var(--color-green);
@@ -324,29 +361,6 @@
       line-height: 1.8;
     }
 
-    .scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: var(--color-taupe);
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .scroll-indicator svg {
-      width: 20px; height: 20px;
-      stroke: var(--color-taupe);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
 
     /* ===== SECTIONS ===== */
     .container {
@@ -376,11 +390,22 @@
     }
 
     /* ===== BRIEFING ===== */
-    .briefing { background: var(--color-alt-bg); }
+    .briefing {
+      background: var(--color-alt-bg);
+    }
 
-    .briefing-content { max-width: 800px; margin: 0 auto; }
-    .briefing-content .section-title { text-align: center; }
-    .briefing-content .section-label { text-align: center; }
+    .briefing-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .briefing-content .section-title {
+      text-align: center;
+    }
+
+    .briefing-content .section-label {
+      text-align: center;
+    }
 
     .briefing-text {
       columns: 2;
@@ -405,7 +430,9 @@
       border-top: 1px solid var(--color-beige);
     }
 
-    .briefing-value { text-align: center; }
+    .briefing-value {
+      text-align: center;
+    }
 
     .briefing-value h3 {
       font-family: 'Georgia', 'Times New Roman', serif;
@@ -423,7 +450,9 @@
     }
 
     /* ===== ONDE NOS ACHAR ===== */
-    .onde-achar { background: var(--color-cream); }
+    .onde-achar {
+      background: var(--color-cream);
+    }
 
     .onde-grid {
       display: grid;
@@ -529,7 +558,9 @@
       transition: border-color 0.3s;
     }
 
-    .onde-item-text a:hover { border-color: var(--color-brown); }
+    .onde-item-text a:hover {
+      border-color: var(--color-brown);
+    }
 
     /* ===== AGENDAMENTO ===== */
     .agendamento {
@@ -730,6 +761,7 @@
 
     /* ===== ESTUDOS ===== */
     .estudos { background: var(--color-alt-bg); }
+
     .estudos-list { margin-top: 48px; display: flex; flex-direction: column; gap: 24px; }
 
     .estudo-item {
@@ -825,8 +857,11 @@
     /* ===== EQUIPE ===== */
     .equipe-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px; margin-top: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .equipe-card { text-align: center; }
@@ -844,6 +879,33 @@
     }
 
     .equipe-card p { font-size: 0.8rem; color: var(--color-taupe); letter-spacing: 1px; text-transform: uppercase; }
+
+    .equipe-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-green);
+      transition: color 0.3s;
+    }
+
+    a.equipe-card {
+      padding: 32px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+
+    a.equipe-card:hover {
+      background: var(--color-cream);
+      border-color: var(--color-beige);
+      transform: translateY(-4px);
+    }
+
+    a.equipe-card:hover .equipe-link {
+      color: var(--color-brown);
+    }
 
     /* ===== CONTATO ===== */
     .contato {
@@ -988,7 +1050,7 @@
     footer p { color: var(--color-taupe); font-size: 0.8rem; letter-spacing: 1px; }
 
     footer .footer-logo {
-      font-family: 'Great Vibes', 'Pinyon Script', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       color: var(--color-green-light);
       font-size: 1.3rem;
       margin-bottom: 12px;
@@ -1082,8 +1144,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img src="images/Logo.png" alt="" class="hero-sunflower">
-    <img src="images/Logo.png" alt="" class="hero-sunflower-left">
+    <!-- Sunflower decorations -->
+    <img src="images/logo-girassol.png" alt="" class="hero-sunflower">
+    <img src="images/logo-girassol.png" alt="" class="hero-sunflower-left">
 
     <!-- Floating petals -->
     <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
@@ -1102,19 +1165,30 @@
     <div class="petal"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M2 11c0-5 8-10 18-10s18 5 18 10-8 10-18 10S2 16 2 11z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M20 1v20" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <!-- Extra petals 17-32 -->
+    <div class="petal"><svg width="24" height="14" viewBox="0 0 24 14"><path d="M2 7c0-3 4-6 10-6s10 3 10 6-4 6-10 6S2 10 2 7z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M12 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="20" height="12" viewBox="0 0 20 12"><path d="M2 6c0-2.5 3-5 8-5s8 2.5 8 5-3 5-8 5S2 8.5 2 6z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M10 1v10" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="30" height="16" viewBox="0 0 30 16"><path d="M2 8c0-3.5 5.5-7 13-7s13 3.5 13 7-5.5 7-13 7S2 11.5 2 8z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M15 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="38" height="20" viewBox="0 0 38 20"><path d="M2 10c0-4.5 7.5-9 17-9s17 4.5 17 9-7.5 9-17 9S2 14.5 2 10z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M19 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="22" height="12" viewBox="0 0 22 12"><path d="M2 6c0-2.5 3.5-5 9-5s9 2.5 9 5-3.5 5-9 5S2 8.5 2 6z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M11 1v10" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="24" height="14" viewBox="0 0 24 14"><path d="M2 7c0-3 4-6 10-6s10 3 10 6-4 6-10 6S2 10 2 7z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M12 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="20" height="10" viewBox="0 0 20 10"><path d="M2 5c0-2 3-4 8-4s8 2 8 4-3 4-8 4S2 7 2 5z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M10 1v8" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
 
     <div class="hero-decoration"></div>
     <h1><span class="hero-name">Instituto Rebeca Magalhães</span></h1>
     <p class="hero-subtitle">Psicologia &middot; Atendimento &middot; Estudos</p>
     <p class="hero-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+      Te mostramos o caminho com conhecimento e afeto.
     </p>
-    <div class="scroll-indicator">
-      <span>Explore</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
-        <path d="M12 5v14M5 12l7 7 7-7"/>
-      </svg>
-    </div>
   </section>
 
   <!-- BRIEFING -->
@@ -1124,10 +1198,16 @@
         <p class="section-label fade-in">O Instituto</p>
         <h2 class="section-title fade-in">Quem somos e no que acreditamos</h2>
         <div class="briefing-text fade-in">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a. Proin consequat auctor diam, id maximus erat pretium ac. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-          <p>Nulla facilisi. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.</p>
-          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+          <p>Sejam bem-vindos ao Instituto Rebeca Magalhães!</p>
+          <p>Com 17 anos de experiência, nosso Instituto foi criado para acolher, cuidar e caminhar ao lado de pessoas e famílias em seus processos de autoconhecimento, desenvolvimento e saúde emocional.</p>
+          <p>Aqui, cada história é recebida com respeito, escuta atenta e sensibilidade.</p>
+          <p>Nosso trabalho é guiado pela psicologia clínica comportamental, pela ética profissional e pelo compromisso com um cuidado humano e individualizado.</p>
+          <p>Não oferecemos mudanças imediatas, fórmulas mágicas ou promessas de uma vida feliz. Em contraponto, lutamos pelo cliente e construímos com ele uma história de dedicação processual, com foco na mudança de contingências relevantes em prol da sua evolução — na direção de uma vida com mais propósito.</p>
+          <p>O Instituto Rebeca Magalhães tem como objetivo oferecer um ambiente seguro, responsável e acolhedor.</p>
+          <p>Acreditamos que o conhecimento, quando aliado ao afeto, fortalece vínculos e possibilita transformações reais.</p>
+          <p>Nossa missão é que cada pessoa que passar por aqui, possa se sentir compreendida, respeitada e apoiada em sua trajetória com mudanças significativas e duradouras.</p>
+          <p><em>"Te mostramos o caminho com conhecimento e afeto"</em></p>
+          <p>Estamos de portas abertas!</p>
         </div>
         <div class="briefing-values fade-in">
           <div class="briefing-value">
@@ -1154,7 +1234,7 @@
       <h2 class="section-title fade-in">Venha nos visitar</h2>
       <div class="onde-grid">
         <div class="onde-map fade-in">
-          <!-- TROCAR: Substitua o src abaixo pela URL do Google Maps do endereço real -->
+          <!-- TROCAR: Substitua o placeholder abaixo pelo iframe do Google Maps -->
           <!-- Para gerar: Google Maps > buscar endereço > Compartilhar > Incorporar um mapa > copiar o src do iframe -->
           <div class="onde-map-placeholder">
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -1261,7 +1341,6 @@
           <p>Nossa equipe confirma seu agendamento em até 24h</p>
         </div>
       </div>
-
       <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-whatsapp-agendar fade-in" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Agendar pelo WhatsApp
@@ -1350,26 +1429,18 @@
       <p class="section-label fade-in">Equipe</p>
       <h2 class="section-title fade-in">Nossos profissionais</h2>
       <div class="equipe-grid">
-        <div class="equipe-card fade-in">
+        <a href="equipe-rebeca.html" class="equipe-card fade-in" style="text-decoration:none;color:inherit;">
           <div class="equipe-avatar"></div>
           <h3>Rebeca Magalhães</h3>
-          <p>Diretora &middot; CRP 00/0000</p>
-        </div>
-        <div class="equipe-card fade-in">
+          <p>Psicóloga Clínica &middot; CRP 00/0000</p>
+          <span class="equipe-link">Saiba mais &rarr;</span>
+        </a>
+        <a href="equipe-rodrigo.html" class="equipe-card fade-in" style="text-decoration:none;color:inherit;">
           <div class="equipe-avatar"></div>
-          <h3>Lorem Ipsum</h3>
-          <p>Psicóloga Clínica</p>
-        </div>
-        <div class="equipe-card fade-in">
-          <div class="equipe-avatar"></div>
-          <h3>Dolor Amet</h3>
-          <p>Psicólogo</p>
-        </div>
-        <div class="equipe-card fade-in">
-          <div class="equipe-avatar"></div>
-          <h3>Sit Consectetur</h3>
-          <p>Pesquisadora</p>
-        </div>
+          <h3>Rodrigo Magalhães</h3>
+          <p>Psicólogo &middot; CRP 00/0000</p>
+          <span class="equipe-link">Saiba mais &rarr;</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1436,6 +1507,7 @@
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
 
+    // Check saved preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       html.setAttribute('data-theme', savedTheme);

@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodrigo Magalhães — Instituto Rebeca Magalhães</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
+  <link rel="apple-touch-icon" href="images/Logo.png">
+  <link rel="shortcut icon" href="images/Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Calligraphy';
+      src: local('Great Vibes'), local('Pinyon Script'), local('Brittany Signature'), local('Dancing Script'), local('Parisienne'), local('Alex Brush'), local('Allura'), local('Sacramento');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    :root, [data-theme="light"] {
+      --color-bg: #F5F0EB;
+      --color-cream: #EDE6DC;
+      --color-beige: #D9CCBC;
+      --color-taupe: #B8A99A;
+      --color-taupe-dark: #9A8B7A;
+      --color-brown: #7A6B5A;
+      --color-green: #5B7A5E;
+      --color-green-light: #6E8E71;
+      --color-text: #4A3F35;
+      --color-text-light: #8A7D70;
+      --color-white: #FDFBF8;
+      --color-card-bg: #FDFBF8;
+      --color-alt-bg: #FDFBF8;
+      --nav-bg: rgba(245, 240, 235, 0.95);
+      --color-footer-bg: #4A3F35;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #1C1915;
+      --color-cream: #2A2520;
+      --color-beige: #3D362E;
+      --color-taupe: #7A6E60;
+      --color-taupe-dark: #9A8D7E;
+      --color-brown: #C4B5A2;
+      --color-green: #7BA37E;
+      --color-green-light: #8FB892;
+      --color-text: #E8E0D6;
+      --color-text-light: #A69D90;
+      --color-white: #232019;
+      --color-card-bg: #262220;
+      --color-alt-bg: #201D19;
+      --nav-bg: rgba(28, 25, 21, 0.95);
+      --color-footer-bg: #141210;
+    }
+
+    html { transition: background-color 0.4s ease, color 0.4s ease; }
+    body, nav, section, footer { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-beige);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-size: 1.3rem;
+      color: var(--color-green);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-img { height: 36px; width: auto; object-fit: contain; }
+
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+
+    .btn-back {
+      text-decoration: none;
+      color: var(--color-taupe-dark);
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .btn-back:hover { color: var(--color-brown); }
+
+    .theme-toggle {
+      background: none;
+      border: 1.5px solid var(--color-taupe);
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--color-taupe-dark);
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    .theme-toggle:hover { border-color: var(--color-brown); color: var(--color-brown); }
+
+    .theme-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+    .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+    .profile {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    .profile-header {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .profile-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
+      flex-shrink: 0;
+    }
+
+    .profile-intro h1 {
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-weight: 400;
+      font-size: 2.8rem;
+      color: var(--color-green);
+      margin-bottom: 4px;
+    }
+
+    .profile-intro .profile-role {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-taupe-dark);
+      margin-bottom: 16px;
+    }
+
+    .profile-intro .profile-crp {
+      font-size: 0.85rem;
+      color: var(--color-taupe);
+    }
+
+    .profile-section { margin-bottom: 40px; }
+
+    .profile-section h2 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.4rem;
+      color: var(--color-brown);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-beige);
+    }
+
+    .profile-section p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+
+    .profile-section ul { list-style: none; padding: 0; }
+
+    .profile-section ul li {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .profile-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-green);
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: var(--color-green);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border: 1.5px solid var(--color-green);
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+
+    .btn-voltar:hover {
+      background: var(--color-green);
+      color: #fff;
+    }
+
+    footer {
+      background: var(--color-footer-bg);
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer p { color: var(--color-taupe); font-size: 0.8rem; letter-spacing: 1px; }
+
+    footer .footer-logo {
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      color: var(--color-green-light);
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .profile { padding: 100px 24px 60px; }
+      .profile-header { flex-direction: column; text-align: center; gap: 24px; }
+      .profile-avatar { width: 150px; height: 150px; }
+      .nav-inner { padding: 14px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo.png" alt="Logo" class="nav-logo-img">
+        <span>Instituto Rebeca Magalhães</span>
+      </a>
+      <div class="nav-right">
+        <a href="index.html#equipe" class="btn-back">&larr; Voltar</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="profile">
+    <div class="profile-header">
+      <div class="profile-avatar"></div>
+      <div class="profile-intro">
+        <h1>Rodrigo Magalhães</h1>
+        <p class="profile-role">Psicólogo Clínico</p>
+        <!-- TROCAR: Substitua o CRP abaixo pelo número real -->
+        <p class="profile-crp">CRP 00/0000</p>
+      </div>
+    </div>
+
+    <div class="profile-section">
+      <h2>Sobre</h2>
+      <!-- TROCAR: Substitua os textos abaixo pela bio real do Rodrigo -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a. Proin consequat auctor diam.</p>
+      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+    </div>
+
+    <div class="profile-section">
+      <h2>Formação</h2>
+      <!-- TROCAR: Substitua os itens abaixo pela formação real -->
+      <ul>
+        <li>Graduação em Psicologia — Universidade Lorem Ipsum</li>
+        <li>Mestrado em Psicologia — Instituto Dolor Amet</li>
+        <li>Especialização em Neuropsicologia</li>
+      </ul>
+    </div>
+
+    <div class="profile-section">
+      <h2>Áreas de Atuação</h2>
+      <!-- TROCAR: Substitua os itens abaixo pelas áreas reais -->
+      <ul>
+        <li>Psicoterapia individual</li>
+        <li>Avaliação neuropsicológica</li>
+        <li>Orientação de pais e famílias</li>
+        <li>Atendimento a adolescentes</li>
+      </ul>
+    </div>
+
+    <a href="index.html#equipe" class="btn-voltar">&larr; Voltar para Equipe</a>
+  </div>
+
+  <footer>
+    <p class="footer-logo">Instituto Rebeca Magalhães</p>
+    <p>&copy; 2024 Instituto Rebeca Magalhães.</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) html.setAttribute('data-theme', savedTheme);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) html.setAttribute('data-theme', 'dark');
+
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+
+</body>
+</html>
