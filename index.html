@@ -25,16 +25,16 @@
       --color-beige: #D9CCBC;
       --color-taupe: #B8A99A;
       --color-taupe-dark: #9A8B7A;
-      --color-brown: #7A6B5A;
-      --color-green: #5B7A5E;
-      --color-green-light: #6E8E71;
-      --color-text: #4A3F35;
-      --color-text-light: #8A7D70;
+      --color-brown: #6B4F3A;
+      --color-green: #4A5A2B;
+      --color-green-light: #5E6E3A;
+      --color-text: #5C4A3A;
+      --color-text-light: #7A6555;
       --color-white: #FDFBF8;
       --color-card-bg: #FDFBF8;
       --color-alt-bg: #FDFBF8;
       --nav-bg: rgba(245, 240, 235, 0.95);
-      --color-contato-bg: #7A6B5A;
+      --color-contato-bg: #5C4A3A;
       --color-contato-text: #EDE6DC;
       --color-footer-bg: #4A3F35;
       --color-input-bg: rgba(255,255,255,0.08);
@@ -49,8 +49,8 @@
       --color-taupe: #7A6E60;
       --color-taupe-dark: #9A8D7E;
       --color-brown: #C4B5A2;
-      --color-green: #7BA37E;
-      --color-green-light: #8FB892;
+      --color-green: #8FA66A;
+      --color-green-light: #A0B87A;
       --color-text: #E8E0D6;
       --color-text-light: #A69D90;
       --color-white: #232019;
@@ -107,7 +107,7 @@
     }
 
     .nav-logo {
-      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-family: 'Great Vibes', 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       font-size: 1.3rem;
       color: var(--color-green);
       text-decoration: none;
@@ -314,51 +314,96 @@
     }
 
     .hero h1 {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-style: italic;
+      font-family: 'Pinyon Script', 'Great Vibes', 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       font-weight: 400;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      color: var(--color-green);
-      margin-bottom: 0;
-      line-height: 1.3;
-      letter-spacing: 2px;
-    }
-
-    .hero .hero-ao {
-      display: block;
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-style: italic;
-      font-size: clamp(1.2rem, 2vw, 1.6rem);
-      color: var(--color-green);
-      letter-spacing: 3px;
-      margin-top: 4px;
-    }
-
-    .hero .hero-name {
-      display: block;
-      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       font-style: normal;
       font-size: clamp(3.2rem, 7vw, 5.5rem);
       color: var(--color-green);
+      margin-bottom: 0;
       line-height: 1.1;
-      margin: 8px 0 4px;
       letter-spacing: 1px;
     }
 
     .hero-subtitle {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--color-green);
+      letter-spacing: 2px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    .hero-services {
       font-size: 0.85rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--color-taupe-dark);
-      margin-top: 20px;
       margin-bottom: 40px;
     }
 
-    .hero-text {
+    .hero-slogan {
+      max-width: 600px;
+      margin-bottom: 8px;
+    }
+
+    .hero-slogan .slogan-intro {
+      display: block;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      color: var(--color-text-light);
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    .hero-slogan .slogan-main {
+      display: block;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+      color: var(--color-brown);
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .hero-tagline {
       max-width: 540px;
       color: var(--color-text-light);
-      font-size: 1rem;
+      font-size: 0.95rem;
+      font-style: italic;
       line-height: 1.8;
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+
+    .btn-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--color-green);
+      color: #fff;
+      border: none;
+      padding: 18px 40px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25);
+    }
+
+    .btn-hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(74, 90, 43, 0.35);
+    }
+
+    .btn-hero-cta svg {
+      width: 22px; height: 22px;
+      fill: #fff;
     }
 
 
@@ -384,7 +429,7 @@
       font-style: italic;
       font-weight: 400;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: var(--color-brown);
+      color: var(--color-green);
       margin-bottom: 24px;
       line-height: 1.3;
     }
@@ -423,7 +468,7 @@
 
     .briefing-values {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
       margin-top: 48px;
       padding-top: 48px;
@@ -432,6 +477,10 @@
 
     .briefing-value {
       text-align: center;
+      background: var(--color-bg);
+      padding: 32px 28px;
+      border-radius: 8px;
+      border: 1px solid var(--color-beige);
     }
 
     .briefing-value h3 {
@@ -439,14 +488,74 @@
       font-style: italic;
       font-weight: 400;
       font-size: 1.2rem;
-      color: var(--color-brown);
-      margin-bottom: 8px;
+      color: var(--color-green);
+      margin-bottom: 12px;
     }
 
     .briefing-value p {
       font-size: 0.85rem;
       color: var(--color-text-light);
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .briefing-valores-section {
+      margin-top: 40px;
+      grid-column: 1 / -1;
+    }
+
+    .briefing-valores-section h3 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.3rem;
+      color: var(--color-green);
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .valor-item {
+      background: var(--color-bg);
+      padding: 28px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--color-beige);
+      text-align: left;
+    }
+
+    .valor-item h4 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-green);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .valor-item p {
+      font-size: 0.82rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    /* Last two valores centered */
+    .valores-grid .valor-item:nth-child(4),
+    .valores-grid .valor-item:nth-child(5) {
+      max-width: 100%;
+    }
+
+    .valores-last-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+      max-width: 66%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* ===== ONDE NOS ACHAR ===== */
@@ -597,7 +706,7 @@
     }
 
     .agendamento .section-title {
-      color: var(--color-brown);
+      color: var(--color-green);
       margin-bottom: 16px;
     }
 
@@ -662,14 +771,14 @@
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(91, 122, 94, 0.25);
+      box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25);
       position: relative;
       z-index: 1;
     }
 
     .btn-whatsapp-agendar:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(91, 122, 94, 0.35);
+      box-shadow: 0 8px 30px rgba(74, 90, 43, 0.35);
     }
 
     .btn-whatsapp-agendar svg {
@@ -738,14 +847,20 @@
     .servico-card:hover::before { transform: scaleX(1); }
 
     .servico-icon {
-      width: 48px; height: 48px;
+      width: 56px; height: 56px;
       border-radius: 50%;
       background: var(--color-cream);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 24px;
-      font-size: 1.2rem;
+      overflow: hidden;
+    }
+
+    .servico-icon img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
     }
 
     .servico-card h3 {
@@ -753,7 +868,7 @@
       font-style: italic;
       font-weight: 400;
       font-size: 1.3rem;
-      color: var(--color-brown);
+      color: var(--color-green);
       margin-bottom: 12px;
     }
 
@@ -783,7 +898,7 @@
     .estudo-info h3 {
       font-family: 'Georgia', 'Times New Roman', serif;
       font-style: italic; font-weight: 400; font-size: 1.15rem;
-      color: var(--color-brown); margin-bottom: 4px;
+      color: var(--color-green); margin-bottom: 4px;
     }
 
     .estudo-info p { font-size: 0.85rem; color: var(--color-text-light); }
@@ -875,7 +990,7 @@
     .equipe-card h3 {
       font-family: 'Georgia', 'Times New Roman', serif;
       font-style: italic; font-weight: 400; font-size: 1.1rem;
-      color: var(--color-brown); margin-bottom: 4px;
+      color: var(--color-green); margin-bottom: 4px;
     }
 
     .equipe-card p { font-size: 0.8rem; color: var(--color-taupe); letter-spacing: 1px; text-transform: uppercase; }
@@ -1050,7 +1165,7 @@
     footer p { color: var(--color-taupe); font-size: 0.8rem; letter-spacing: 1px; }
 
     footer .footer-logo {
-      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-family: 'Great Vibes', 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
       color: var(--color-green-light);
       font-size: 1.3rem;
       margin-bottom: 12px;
@@ -1087,12 +1202,14 @@
       .depoimentos-grid { grid-template-columns: 1fr; }
       .espaco-grid { grid-template-columns: 1fr 1fr; }
       .espaco-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
-      .equipe-grid { grid-template-columns: repeat(2, 1fr); }
+      .equipe-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
       .contato-grid { grid-template-columns: 1fr; gap: 40px; }
       .estudo-item { grid-template-columns: 1fr; gap: 8px; }
       .estudo-tag { justify-self: start; }
       .briefing-text { columns: 1; }
       .briefing-values { grid-template-columns: 1fr; gap: 24px; }
+      .valores-grid { grid-template-columns: 1fr; }
+      .valores-last-row { grid-template-columns: 1fr; max-width: 100%; }
       .agendamento-steps { gap: 32px; }
     }
 
@@ -1119,21 +1236,17 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <img src="images/Logo.png" alt="Logo" class="nav-logo-img">
-        <span>Instituto Rebeca Magalhães</span>
       </a>
       <div class="nav-right">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#briefing">O Instituto</a></li>
+          <li><a href="#briefing">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#estudos">Estudos</a></li>
           <li><a href="#equipe">Equipe</a></li>
-          <li><a href="#agendamento">Agendar</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
         <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
           <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <span class="toggle-label">Tema</span>
         </button>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
@@ -1148,7 +1261,7 @@
     <img src="images/logo-girassol.png" alt="" class="hero-sunflower">
     <img src="images/logo-girassol.png" alt="" class="hero-sunflower-left">
 
-    <!-- Floating petals -->
+    <!-- Floating petals (32) -->
     <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
@@ -1184,11 +1297,18 @@
     <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
 
     <div class="hero-decoration"></div>
-    <h1><span class="hero-name">Instituto Rebeca Magalhães</span></h1>
-    <p class="hero-subtitle">Psicologia &middot; Atendimento &middot; Estudos</p>
-    <p class="hero-text">
-      Te mostramos o caminho com conhecimento e afeto.
-    </p>
+    <h1>Instituto Rebeca Magalhães</h1>
+    <p class="hero-subtitle">Psicologia Comportamental Aplicada</p>
+    <p class="hero-services">Atendimento Clínico &middot; Supervisão &middot; Ensino</p>
+    <div class="hero-slogan">
+      <span class="slogan-intro">Sentir é inevitável.</span>
+      <span class="slogan-main">O que você faz com isso, nós ensinamos.</span>
+    </div>
+    <p class="hero-tagline">Com conhecimento, afeto e base científica.</p>
+    <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-hero-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar atendimento
+    </a>
   </section>
 
   <!-- BRIEFING -->
@@ -1202,25 +1322,48 @@
           <p>Com 17 anos de experiência, nosso Instituto foi criado para acolher, cuidar e caminhar ao lado de pessoas e famílias em seus processos de autoconhecimento, desenvolvimento e saúde emocional.</p>
           <p>Aqui, cada história é recebida com respeito, escuta atenta e sensibilidade.</p>
           <p>Nosso trabalho é guiado pela psicologia clínica comportamental, pela ética profissional e pelo compromisso com um cuidado humano e individualizado.</p>
-          <p>Não oferecemos mudanças imediatas, fórmulas mágicas ou promessas de uma vida feliz. Em contraponto, lutamos pelo cliente e construímos com ele uma história de dedicação processual, com foco na mudança de contingências relevantes em prol da sua evolução — na direção de uma vida com mais propósito.</p>
+          <p>Não oferecemos mudanças imediatas, fórmulas mágicas ou promessas de uma vida feliz. Em contraponto, lutamos pelo cliente e construímos com ele uma história de dedicação processual, com foco na mudança de contingências relevantes em prol da sua evolução, na direção de uma vida com mais propósito.</p>
           <p>O Instituto Rebeca Magalhães tem como objetivo oferecer um ambiente seguro, responsável e acolhedor.</p>
           <p>Acreditamos que o conhecimento, quando aliado ao afeto, fortalece vínculos e possibilita transformações reais.</p>
           <p>Nossa missão é que cada pessoa que passar por aqui, possa se sentir compreendida, respeitada e apoiada em sua trajetória com mudanças significativas e duradouras.</p>
-          <p><em>"Te mostramos o caminho com conhecimento e afeto"</em></p>
+          <p><em>Te mostramos o caminho com conhecimento e afeto</em></p>
           <p>Estamos de portas abertas!</p>
         </div>
         <div class="briefing-values fade-in">
           <div class="briefing-value">
             <h3>Missão</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+            <p>Promover mudanças reais na vida das pessoas por meio de uma psicologia baseada em ciência e conduzida com afeto, ajudando cada indivíduo a compreender o que mantém seus comportamentos e a construir novas formas de agir diante do que sente.</p>
           </div>
           <div class="briefing-value">
             <h3>Visão</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            <p>Ser referência em psicologia comportamental aplicada à vida real, reconhecida pela clareza na condução dos processos e pela capacidade de promover mudanças com consistência e afeto, formando pessoas mais responsáveis por suas escolhas e relações.</p>
           </div>
-          <div class="briefing-value">
-            <h3>Valores</h3>
-            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+        </div>
+        <div class="briefing-valores-section fade-in">
+          <h3>Valores</h3>
+          <div class="valores-grid">
+            <div class="valor-item">
+              <h4>Ciência como base</h4>
+              <p>Nosso trabalho é guiado pela ciência, com compromisso com evidências e com o que funciona na prática.</p>
+            </div>
+            <div class="valor-item">
+              <h4>Raciocínio clínico individualizado e conduzido com afeto</h4>
+              <p>Cada processo é construído de forma única, com presença, respeito e implicação real, a partir da análise das contingências.</p>
+            </div>
+            <div class="valor-item">
+              <h4>Saúde mental além do diagnóstico</h4>
+              <p>O cuidado não se limita a rótulos, mas considera a história, o contexto e a função dos comportamentos.</p>
+            </div>
+          </div>
+          <div class="valores-last-row">
+            <div class="valor-item">
+              <h4>Clareza que orienta a mudança</h4>
+              <p>Compreender o que acontece e construir novas formas de agir é parte essencial no processo de psicoterapia.</p>
+            </div>
+            <div class="valor-item">
+              <h4>Responsabilidade</h4>
+              <p>A mudança envolve participação ativa e construção conjunta. O encontro terapêutico é construído a dois, atravessado por múltiplas variáveis, sem depender do controle total do terapeuta.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1235,7 +1378,6 @@
       <div class="onde-grid">
         <div class="onde-map fade-in">
           <!-- TROCAR: Substitua o placeholder abaixo pelo iframe do Google Maps -->
-          <!-- Para gerar: Google Maps > buscar endereço > Compartilhar > Incorporar um mapa > copiar o src do iframe -->
           <div class="onde-map-placeholder">
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -1244,24 +1386,18 @@
             <span>Google Maps</span>
             <span style="font-size:0.65rem;opacity:0.5;text-transform:none;letter-spacing:0">Troque pelo embed do endereço real</span>
           </div>
-          <!-- Descomente e troque o src quando tiver o endereço:
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!..."
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-          -->
         </div>
         <div class="onde-info fade-in">
-          <p class="onde-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Agende seu horário pelo telefone ou e-mail.</p>
+          <!-- TROCAR: Substitua pelo texto real -->
+          <p class="onde-desc">Nosso espaço foi pensado para proporcionar acolhimento e conforto. Agende seu horário pelo telefone ou WhatsApp.</p>
           <div class="onde-item">
             <div class="onde-item-icon">
               <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div class="onde-item-text">
               <h4>Endereço</h4>
-              <p>Rua Lorem Ipsum, 123, Sala 45<br>Bairro Dolor Sit — Cidade, Estado<br>CEP 00000-000</p>
+              <!-- TROCAR: endereço real -->
+              <p>Rua Lorem Ipsum, 123, Sala 45<br>Bairro Dolor Sit, Cidade, Estado<br>CEP 00000-000</p>
             </div>
           </div>
           <div class="onde-item">
@@ -1270,7 +1406,7 @@
             </div>
             <div class="onde-item-text">
               <h4>Telefone / WhatsApp</h4>
-              <p><a href="tel:+5500000000000">(00) 00000-0000</a></p>
+              <p><a href="tel:+5533988908889">(33) 98890-8889</a></p>
             </div>
           </div>
           <div class="onde-item">
@@ -1279,6 +1415,7 @@
             </div>
             <div class="onde-item-text">
               <h4>E-mail</h4>
+              <!-- TROCAR: email real -->
               <p><a href="mailto:contato@institutorebeca.com.br">contato@institutorebeca.com.br</a></p>
             </div>
           </div>
@@ -1288,7 +1425,8 @@
             </div>
             <div class="onde-item-text">
               <h4>Horário de Atendimento</h4>
-              <p>Seg — Sex: 8h às 20h<br>Sáb: 8h às 14h</p>
+              <!-- TROCAR: horários reais -->
+              <p>Seg a Sex: 8h às 20h<br>Sáb: 8h às 14h</p>
             </div>
           </div>
         </div>
@@ -1303,19 +1441,28 @@
       <h2 class="section-title fade-in">O que oferecemos</h2>
       <div class="servicos-grid">
         <div class="servico-card fade-in">
-          <div class="servico-icon">&#9672;</div>
-          <h3>Atendimento Clínico</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo.</p>
+          <div class="servico-icon">
+            <img src="images/Logo.png" alt="Logo">
+          </div>
+          <h3>Psicoterapia Individual</h3>
+          <!-- TROCAR: descrição real -->
+          <p>Atendimento clínico individualizado com base na psicologia comportamental, focado em compreender e transformar padrões que impactam sua qualidade de vida.</p>
         </div>
         <div class="servico-card fade-in">
-          <div class="servico-icon">&#9670;</div>
-          <h3>Psicoterapia de Grupo</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+          <div class="servico-icon">
+            <img src="images/Logo.png" alt="Logo">
+          </div>
+          <h3>Psicoterapia Online</h3>
+          <!-- TROCAR: descrição real -->
+          <p>Sessões de psicoterapia por videoconferência com a mesma qualidade e profundidade do atendimento presencial, para quem precisa de flexibilidade.</p>
         </div>
         <div class="servico-card fade-in">
-          <div class="servico-icon">&#9711;</div>
-          <h3>Avaliação Psicológica</h3>
-          <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+          <div class="servico-icon">
+            <img src="images/Logo.png" alt="Logo">
+          </div>
+          <h3>Grupo / Workshop</h3>
+          <!-- TROCAR: descrição real -->
+          <p>Encontros em grupo e workshops temáticos que promovem aprendizado coletivo, troca de experiências e desenvolvimento pessoal em um ambiente acolhedor.</p>
         </div>
       </div>
     </div>
@@ -1452,18 +1599,21 @@
       <h2 class="section-title fade-in">Fale conosco</h2>
       <div class="contato-grid">
         <div class="contato-info fade-in">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <!-- TROCAR: texto real -->
+          <p>Estamos prontos para acolher você. Entre em contato para agendar sua primeira consulta ou tirar dúvidas sobre nossos serviços.</p>
           <div class="contato-detail">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span>(00) 00000-0000</span>
+            <span>(33) 98890-8889</span>
           </div>
           <div class="contato-detail">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <!-- TROCAR: email real -->
             <span>contato@institutorebeca.com.br</span>
           </div>
           <div class="contato-detail">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Rua Lorem Ipsum, 123 — Cidade, Estado</span>
+            <!-- TROCAR: endereço real -->
+            <span>Rua Lorem Ipsum, 123, Cidade, Estado</span>
           </div>
         </div>
         <form class="contato-form fade-in" onsubmit="event.preventDefault()">
@@ -1479,7 +1629,7 @@
   <!-- FOOTER -->
   <footer>
     <p class="footer-logo">Instituto Rebeca Magalhães</p>
-    <p>&copy; 2024 Instituto Rebeca Magalhães. Lorem ipsum dolor sit amet.</p>
+    <p>&copy; 2026 Instituto Rebeca Magalhães. Todos os direitos reservados.</p>
   </footer>
 
   <!-- WHATSAPP FLOATING BUTTON -->
@@ -1507,7 +1657,6 @@
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
 
-    // Check saved preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       html.setAttribute('data-theme', savedTheme);
