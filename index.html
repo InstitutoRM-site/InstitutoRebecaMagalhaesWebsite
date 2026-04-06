@@ -232,7 +232,7 @@
       transform: translateY(-50%);
       width: 400px;
       height: auto;
-      opacity: 0.18;
+      opacity: 0.08;
       pointer-events: none;
       z-index: 1;
     }
@@ -243,7 +243,7 @@
       bottom: -40px;
       width: 300px;
       height: auto;
-      opacity: 0.12;
+      opacity: 0.06;
       pointer-events: none;
       z-index: 1;
       transform: scaleX(-1) rotate(15deg);
@@ -297,11 +297,11 @@
 
     @keyframes petalFloat {
       0% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
-      10% { opacity: 0.4; }
-      30% { opacity: 0.3; }
-      50% { opacity: 0.25; }
-      70% { opacity: 0.35; }
-      90% { opacity: 0.3; }
+      10% { opacity: 0.2; }
+      30% { opacity: 0.15; }
+      50% { opacity: 0.12; }
+      70% { opacity: 0.18; }
+      90% { opacity: 0.15; }
       100% { opacity: 0; transform: translateY(-100px) rotate(420deg) scale(1.1); }
     }
 
@@ -331,8 +331,8 @@
       font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: var(--color-green);
       letter-spacing: 2px;
-      margin-top: 12px;
-      margin-bottom: 8px;
+      margin-top: 36px;
+      margin-bottom: 12px;
     }
 
     .hero-services {
@@ -340,30 +340,42 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--color-taupe-dark);
-      margin-bottom: 40px;
+      margin-bottom: 56px;
     }
 
     .hero-slogan {
-      max-width: 600px;
-      margin-bottom: 8px;
+      max-width: 900px;
+      width: 80%;
+      margin-bottom: 48px;
+      border: 1px solid var(--color-beige);
+      border-radius: 8px;
+      padding: 32px 60px;
+      background: rgba(253, 251, 248, 0.5);
+    }
+
+    [data-theme="dark"] .hero-slogan {
+      background: rgba(42, 37, 32, 0.4);
     }
 
     .hero-slogan .slogan-intro {
-      display: block;
+      display: inline;
       font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
-      color: var(--color-text-light);
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: var(--color-taupe-dark);
       font-weight: 400;
-      margin-bottom: 4px;
+      font-style: italic;
+      letter-spacing: 1px;
     }
 
     .hero-slogan .slogan-main {
-      display: block;
+      display: inline;
       font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: clamp(1.3rem, 2.8vw, 1.8rem);
-      color: var(--color-brown);
-      font-weight: 700;
-      line-height: 1.4;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--color-green);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
     }
 
     .hero-tagline {
@@ -373,7 +385,7 @@
       font-style: italic;
       line-height: 1.8;
       margin-top: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 0;
     }
 
     .btn-hero-cta {
@@ -970,13 +982,39 @@
     }
 
     /* ===== EQUIPE ===== */
+    .equipe-block {
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+
+    .equipe-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .equipe-block-title {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--color-green);
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-beige);
+    }
+
     .equipe-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px; margin-top: 48px;
-      max-width: 600px;
+      gap: 32px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .equipe-grid-single {
+      grid-template-columns: 1fr;
+      max-width: 400px;
     }
 
     .equipe-card { text-align: center; }
@@ -985,6 +1023,11 @@
       width: 120px; height: 120px; border-radius: 50%;
       background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
       margin: 0 auto 20px;
+      overflow: hidden;
+    }
+
+    .equipe-avatar img {
+      width: 100%; height: 100%; object-fit: cover;
     }
 
     .equipe-card h3 {
@@ -993,7 +1036,39 @@
       color: var(--color-green); margin-bottom: 4px;
     }
 
-    .equipe-card p { font-size: 0.8rem; color: var(--color-taupe); letter-spacing: 1px; text-transform: uppercase; }
+    .equipe-card .equipe-role {
+      font-size: 0.8rem; color: var(--color-taupe-dark); letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .equipe-card .equipe-crp {
+      font-size: 0.75rem; color: var(--color-taupe); letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .equipe-card .equipe-instagram {
+      display: block;
+      font-size: 0.78rem; color: var(--color-green-light);
+      text-decoration: none;
+      transition: color 0.3s;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .equipe-card .equipe-instagram:hover {
+      color: var(--color-brown);
+    }
+
+    .equipe-card .equipe-bio {
+      font-size: 0.82rem; color: var(--color-text-light);
+      line-height: 1.6; margin-top: 8px;
+      font-style: italic;
+    }
+
+    .equipe-card .equipe-desc {
+      font-size: 0.82rem; color: var(--color-text-light);
+      line-height: 1.6; margin-top: 8px;
+    }
 
     .equipe-link {
       display: inline-block;
@@ -1203,6 +1278,7 @@
       .espaco-grid { grid-template-columns: 1fr 1fr; }
       .espaco-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
       .equipe-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+      .equipe-grid-single { grid-template-columns: 1fr; max-width: 100%; }
       .contato-grid { grid-template-columns: 1fr; gap: 40px; }
       .estudo-item { grid-template-columns: 1fr; gap: 8px; }
       .estudo-tag { justify-self: start; }
@@ -1296,15 +1372,14 @@
     <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
 
-    <div class="hero-decoration"></div>
     <h1>Instituto Rebeca Magalhães</h1>
     <p class="hero-subtitle">Psicologia Comportamental Aplicada</p>
     <p class="hero-services">Atendimento Clínico &middot; Supervisão &middot; Ensino</p>
     <div class="hero-slogan">
       <span class="slogan-intro">Sentir é inevitável.</span>
       <span class="slogan-main">O que você faz com isso, nós ensinamos.</span>
+      <p class="hero-tagline">com conhecimento, afeto e fundamentação científica.</p>
     </div>
-    <p class="hero-tagline">Com conhecimento, afeto e base científica.</p>
     <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-hero-cta" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Quero iniciar meu processo
@@ -1490,7 +1565,7 @@
       </div>
       <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-whatsapp-agendar fade-in" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Agendar pelo WhatsApp
+        Quero iniciar meu processo
       </a>
     </div>
   </section>
@@ -1575,20 +1650,66 @@
     <div class="container">
       <p class="section-label fade-in">Equipe</p>
       <h2 class="section-title fade-in">Nossos profissionais</h2>
-      <div class="equipe-grid">
-        <a href="equipe-rebeca.html" class="equipe-card fade-in" style="text-decoration:none;color:inherit;">
-          <div class="equipe-avatar"></div>
-          <h3>Rebeca Magalhães</h3>
-          <p>Psicóloga Clínica &middot; CRP 00/0000</p>
-          <span class="equipe-link">Saiba mais &rarr;</span>
-        </a>
-        <a href="equipe-rodrigo.html" class="equipe-card fade-in" style="text-decoration:none;color:inherit;">
-          <div class="equipe-avatar"></div>
-          <h3>Rodrigo Magalhães</h3>
-          <p>Psicólogo &middot; CRP 00/0000</p>
-          <span class="equipe-link">Saiba mais &rarr;</span>
-        </a>
+
+      <!-- Bloco 1: Equipe Clínica -->
+      <div class="equipe-block fade-in">
+        <h3 class="equipe-block-title">Equipe Clínica</h3>
+        <div class="equipe-grid">
+          <a href="equipe-rebeca.html" class="equipe-card" style="text-decoration:none;color:inherit;">
+            <div class="equipe-avatar"></div>
+            <h3>Rebeca Magalhães</h3>
+            <p class="equipe-role">Psicóloga Clínica</p>
+            <p class="equipe-crp">CRP: 04/30791</p>
+            <span class="equipe-instagram">@rebecammagalhaes</span>
+            <span class="equipe-link">Saiba mais &rarr;</span>
+          </a>
+          <a href="equipe-rodrigo.html" class="equipe-card" style="text-decoration:none;color:inherit;">
+            <div class="equipe-avatar"></div>
+            <h3>Rodrigo Mendes</h3>
+            <p class="equipe-role">Psicólogo Clínico</p>
+            <p class="equipe-crp">CRP: a confirmar</p>
+            <span class="equipe-instagram">@rodrigomendespsicologo</span>
+            <span class="equipe-link">Saiba mais &rarr;</span>
+          </a>
+        </div>
       </div>
+
+      <!-- Bloco 2: Formação e Apoio Clínico -->
+      <div class="equipe-block fade-in">
+        <h3 class="equipe-block-title">Formação e Apoio Clínico</h3>
+        <div class="equipe-grid">
+          <div class="equipe-card">
+            <div class="equipe-avatar"></div>
+            <h3>Celine Oliveira Barros</h3>
+            <p class="equipe-role">Graduanda em Psicologia – Vancouver Island University, Canadá 🇨🇦</p>
+            <p class="equipe-desc">Integra as atividades de formação do Instituto, participando de projetos que articulam psicologia e arte, com produção de material acadêmico e desenvolvimento teórico-prático em Análise do Comportamento.</p>
+            <p class="equipe-desc">Também é responsável pelo manejo e pela organização do site do Instituto e pelo quadro "Estante da Cel", com análises e indicações de leitura.</p>
+          </div>
+          <div class="equipe-card">
+            <div class="equipe-avatar"></div>
+            <h3>Júlia Braga Leite</h3>
+            <p class="equipe-role">Graduanda em Psicologia – Coastal Carolina University, Estados Unidos 🇺🇸</p>
+            <p class="equipe-desc">Atua em atividades de formação e apoio clínico, incluindo participação como acompanhante terapêutica (AT) em atendimentos, em parceria com sua universidade.</p>
+            <p class="equipe-desc">Também coordena as publicações do Instituto, contribuindo para a comunicação e produção de conteúdo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloco 3: Práticas Integrativas -->
+      <div class="equipe-block fade-in">
+        <h3 class="equipe-block-title">Práticas Integrativas</h3>
+        <div class="equipe-grid equipe-grid-single">
+          <div class="equipe-card">
+            <div class="equipe-avatar"></div>
+            <h3>Gabriela Magalhães</h3>
+            <p class="equipe-role">Instrutora de Dança e Coreógrafa</p>
+            <p class="equipe-desc">Conduz atividades voltadas à expressão emocional por meio da dança, favorecendo o contato com o corpo e a ampliação de repertórios expressivos.</p>
+            <p class="equipe-desc">Desenvolve trabalhos com crianças e idosos, utilizando a dança como recurso para promoção de bem-estar, vínculo e expressão emocional.</p>
+            <p class="equipe-desc">Sua atuação compõe as práticas complementares do Instituto.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1635,7 +1756,7 @@
   <!-- WHATSAPP FLOATING BUTTON -->
   <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="whatsapp-tooltip">Agendar horário</span>
+    <span class="whatsapp-tooltip">Quero iniciar meu processo</span>
   </a>
 
   <script>
