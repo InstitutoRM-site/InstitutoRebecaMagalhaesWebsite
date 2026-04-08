@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
@@ -927,11 +926,13 @@
     }
 
     /* ===== DEPOIMENTOS ===== */
-    .depoimentos-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+    .depoimentos-wrapper {
+      position: relative;
       margin-top: 48px;
+    }
+
+    .depoimentos-grid {
+      overflow: hidden;
     }
 
     .depoimento-card {
@@ -939,6 +940,59 @@
       padding: 40px; border-radius: 4px;
       border: 1px solid var(--color-beige);
       position: relative;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      display: none;
+    }
+
+    .depoimento-card.active {
+      display: block;
+    }
+
+    .depoimento-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .depoimento-nav button {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--color-beige);
+      background: var(--color-card-bg);
+      color: var(--color-text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .depoimento-nav button:hover {
+      background: var(--color-green);
+      color: white;
+      border-color: var(--color-green);
+    }
+
+    .depoimento-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .depoimento-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--color-beige);
+      transition: all 0.3s ease;
+    }
+
+    .depoimento-dot.active {
+      background: var(--color-green);
+      width: 24px;
+      border-radius: 4px;
     }
 
     .depoimento-card::before {
@@ -1008,25 +1062,36 @@
     }
 
     .equipe-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .equipe-grid-single {
-      grid-template-columns: 1fr;
-      max-width: 400px;
+    .equipe-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-beige);
+      border-left: 4px solid var(--color-green);
+      border-radius: 6px;
+      padding: 28px 32px;
+      transition: all 0.3s ease;
+      text-align: left;
     }
 
-    .equipe-card { text-align: center; }
+    .equipe-card:hover {
+      box-shadow: 0 8px 32px rgba(122, 107, 90, 0.1);
+      transform: translateY(-2px);
+    }
 
     .equipe-avatar {
-      width: 120px; height: 120px; border-radius: 50%;
+      width: 90px; height: 90px; border-radius: 50%;
       background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
-      margin: 0 auto 20px;
+      flex-shrink: 0;
       overflow: hidden;
     }
 
@@ -1034,49 +1099,52 @@
       width: 100%; height: 100%; object-fit: cover;
     }
 
+    .equipe-card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
     .equipe-card h3 {
       font-family: 'Georgia', 'Times New Roman', serif;
-      font-style: italic; font-weight: 400; font-size: 1.1rem;
+      font-style: italic; font-weight: 400; font-size: 1.15rem;
       color: var(--color-green); margin-bottom: 4px;
     }
 
     .equipe-card .equipe-role {
-      font-size: 0.8rem; color: var(--color-taupe-dark); letter-spacing: 1px; text-transform: uppercase;
-      margin-bottom: 2px;
+      font-size: 0.75rem; color: var(--color-taupe-dark); letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 4px;
+      line-height: 1.5;
     }
 
     .equipe-card .equipe-crp {
-      font-size: 0.75rem; color: var(--color-taupe); letter-spacing: 0.5px;
-      margin-bottom: 4px;
+      font-size: 0.73rem; color: var(--color-taupe); letter-spacing: 0.5px;
+      margin-bottom: 6px;
     }
 
     .equipe-card .equipe-instagram {
-      display: block;
+      display: inline-block;
       font-size: 0.78rem; color: var(--color-green-light);
       text-decoration: none;
       transition: color 0.3s;
-      margin-top: 4px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .equipe-card .equipe-instagram:hover {
       color: var(--color-brown);
     }
 
-    .equipe-card .equipe-bio {
-      font-size: 0.82rem; color: var(--color-text-light);
-      line-height: 1.6; margin-top: 8px;
-      font-style: italic;
-    }
-
     .equipe-card .equipe-desc {
       font-size: 0.82rem; color: var(--color-text-light);
-      line-height: 1.6; margin-top: 8px;
+      line-height: 1.7; margin-top: 6px;
+    }
+
+    .equipe-card .equipe-desc + .equipe-desc {
+      margin-top: 8px;
     }
 
     .equipe-link {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 0.75rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -1085,16 +1153,12 @@
     }
 
     a.equipe-card {
-      padding: 32px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
+      text-decoration: none;
+      color: inherit;
     }
 
     a.equipe-card:hover {
-      background: var(--color-cream);
-      border-color: var(--color-beige);
-      transform: translateY(-4px);
+      border-left-color: var(--color-brown);
     }
 
     a.equipe-card:hover .equipe-link {
@@ -1289,11 +1353,11 @@
 
       .sobre-grid, .onde-grid { grid-template-columns: 1fr; gap: 40px; }
       .servicos-grid { grid-template-columns: 1fr; }
-      .depoimentos-grid { grid-template-columns: 1fr; }
+      .depoimento-card { padding: 32px; }
       .espaco-grid { grid-template-columns: 1fr 1fr; }
       .espaco-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
-      .equipe-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
-      .equipe-grid-single { grid-template-columns: 1fr; max-width: 100%; }
+      .equipe-grid { max-width: 100%; }
+      .equipe-card { gap: 20px; padding: 24px; }
       .contato-grid { grid-template-columns: 1fr; gap: 40px; }
       .estudo-item { grid-template-columns: 1fr; gap: 8px; }
       .estudo-tag { justify-self: start; }
@@ -1311,7 +1375,9 @@
       .hero { padding: 100px 24px 60px; }
       .espaco-grid { grid-template-columns: 1fr; }
       .espaco-item:first-child { grid-column: span 1; }
-      .equipe-grid { grid-template-columns: 1fr; }
+      .equipe-grid { max-width: 100%; }
+      .equipe-card { flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 24px 20px; }
+      .equipe-avatar { margin: 0 auto; }
       .whatsapp-float { bottom: 20px; right: 20px; width: 54px; height: 54px; }
       .whatsapp-float svg { width: 28px; height: 28px; }
       .agendamento-steps { flex-direction: column; align-items: center; }
@@ -1391,9 +1457,8 @@
     <p class="hero-subtitle">Psicologia Comportamental Aplicada</p>
     <p class="hero-services">Atendimento Clínico &middot; Supervisão &middot; Ensino</p>
     <div class="hero-slogan">
-      <span class="slogan-intro">Sentir é inevitável.</span>
-      <span class="slogan-main">O que você faz com isso, nós ensinamos.</span>
-      <p class="hero-tagline">com conhecimento, afeto e fundamentação científica.</p>
+      <span class="slogan-intro">Te mostramos</span>
+      <span class="slogan-main">O caminho com conhecimento e afeto.</span>
     </div>
     <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-hero-cta" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1408,16 +1473,14 @@
         <p class="section-label fade-in">O Instituto</p>
         <h2 class="section-title fade-in">Quem somos e no que acreditamos</h2>
         <div class="briefing-text fade-in">
-          <p>Sejam bem-vindos ao Instituto Rebeca Magalhães!</p>
-          <p>Com 17 anos de experiência, nosso Instituto foi criado para acolher, cuidar e caminhar ao lado de pessoas e famílias em seus processos de autoconhecimento, desenvolvimento e saúde emocional.</p>
-          <p>Aqui, cada história é recebida com respeito, escuta atenta e sensibilidade.</p>
-          <p>Nosso trabalho é guiado pela psicologia clínica comportamental, pela ética profissional e pelo compromisso com um cuidado humano e individualizado.</p>
-          <p>Não oferecemos mudanças imediatas, fórmulas mágicas ou promessas de uma vida feliz. Em contraponto, lutamos pelo cliente e construímos com ele uma história de dedicação processual, com foco na mudança de contingências relevantes em prol da sua evolução, na direção de uma vida com mais propósito.</p>
-          <p>O Instituto Rebeca Magalhães tem como objetivo oferecer um ambiente seguro, responsável e acolhedor.</p>
-          <p>Acreditamos que o conhecimento, quando aliado ao afeto, fortalece vínculos e possibilita transformações reais.</p>
-          <p>Nossa missão é que cada pessoa que passar por aqui, possa se sentir compreendida, respeitada e apoiada em sua trajetória com mudanças significativas e duradouras.</p>
-          <p><em>Te mostramos o caminho com conhecimento e afeto</em></p>
-          <p>Estamos de portas abertas!</p>
+          <p>O Instituto Rebeca Magalhães atua na psicologia comportamental aplicada à vida real, com foco na compreensão do que mantém os comportamentos e no desenvolvimento de novas formas de agir diante do que sentimos e das relações que construímos.</p>
+          <p>Com mais de 17 anos de experiência, nosso trabalho é conduzido com base na ciência, na ética profissional e no compromisso com um cuidado individualizado.</p>
+          <p>Aqui, cada história é recebida com respeito, escuta e implicação real.</p>
+          <p>Não trabalhamos com promessas de mudanças rápidas ou fórmulas prontas. O processo é construído com dedicação, a partir da análise das contingências relevantes e no desenvolvimento de repertórios para mudanças que possam ser sustentadas ao longo do tempo.</p>
+          <p>O Instituto reúne prática clínica, ensino e supervisão, articulando atendimento psicológico e desenvolvimento de repertório, tanto para profissionais quanto para aqueles que buscam compreender e transformar sua própria forma de viver.</p>
+          <p>Mais do que um espaço de atendimento, o Instituto se propõe a ser um lugar de construção de repertório, de relações mais funcionais e de formas mais conscientes de agir.</p>
+          <p><em>Sentir é inevitável.</em></p>
+          <p><em>O que você faz com isso, nós ensinamos.</em></p>
         </div>
         <div class="briefing-values fade-in">
           <div class="briefing-value">
@@ -1504,7 +1567,7 @@
             </div>
             <div class="onde-item-text">
               <h4>Horário de Atendimento</h4>
-              <p>Seg a Sex: 8h às 20h<br>Sáb: 8h às 14h</p>
+              <p>Seg a Sex: 9h às 17h</p>
             </div>
           </div>
         </div>
@@ -1577,28 +1640,12 @@
       <h2 class="section-title fade-in">Produção acadêmica</h2>
       <div class="estudos-list">
         <div class="estudo-item fade-in">
-          <span class="estudo-date">Set 2024</span>
+          <span class="estudo-date">Semanal</span>
           <div class="estudo-info">
-            <h3>Zoom para o Público</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+            <h3>Grupo de Estudos Semanais</h3>
+            <p>O Instituto mantém um grupo de estudos semanal em Análise do Comportamento, voltado ao desenvolvimento do raciocínio clínico e à construção contínua de repertórios.</p>
           </div>
-          <span class="estudo-tag">Webinar</span>
-        </div>
-        <div class="estudo-item fade-in">
-          <span class="estudo-date">Jun 2024</span>
-          <div class="estudo-info">
-            <h3>Segunda Meeting Anual</h3>
-            <p>Vivamus lacinia odio vitae vestibulum vestibulum cras porttitor.</p>
-          </div>
-          <span class="estudo-tag">Encontro</span>
-        </div>
-        <div class="estudo-item fade-in">
-          <span class="estudo-date">Mar 2024</span>
-          <div class="estudo-info">
-            <h3>Perspectivas em Psicologia Clínica</h3>
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.</p>
-          </div>
-          <span class="estudo-tag">Publicação</span>
+          <span class="estudo-tag">Grupo de Estudos</span>
         </div>
       </div>
     </div>
@@ -1609,22 +1656,59 @@
     <div class="container">
       <p class="section-label fade-in">Depoimentos</p>
       <h2 class="section-title fade-in">O que dizem sobre nós</h2>
-      <div class="depoimentos-grid">
-        <div class="depoimento-card fade-in">
-          <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a.</blockquote>
-          <p class="depoimento-author">Maria S.</p>
+      <div class="depoimentos-wrapper">
+        <div class="depoimentos-grid" id="depoimentosCarousel">
+          <div class="depoimento-card active fade-in">
+            <blockquote>Quero te agradecer por fazer parte da minha rede de apoio de um jeito tão essencial. Seu acolhimento, sua escuta e sua sensibilidade fazem toda diferença na minha caminhada. Obrigada por me ajudar a enxergar com mais clareza, a compreender meus processos e a me fortalecer a cada passo. Você é uma profissional incrível, e sou muito grata por ter encontrado alguém que cuida, orienta e ilumina com tanta humanidade.</blockquote>
+            <p class="depoimento-author">Paola Katriny</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Como foi maravilhoso conhecer Rebeca Magalhães! Não há como expressar tamanho carinho e gratidão. Ser iluminado por Deus. Quanto profissionalismo e sensibilidade! Obrigada por tudo!</blockquote>
+            <p class="depoimento-author">Juliana Castro</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Rebeca é uma das profissionais mais dedicadas e competentes que já conheci. É aquela que acolhe, acalma e nos deixa mais leve. Só quem a conhece sabe do que estou falando e de seu extremo conhecimento e amor à profissão. Obrigada por fazer parte de nossas vidas.</blockquote>
+            <p class="depoimento-author">Maria Eunice Lott</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Ambiente confortável, decoração bastante lúdica e bela. A profissional Rebeca Magalhães possui muita competência associada a um profissionalismo inerente a pessoas iluminadas em tudo que faz. Parabéns!</blockquote>
+            <p class="depoimento-author">Penha Lopes</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Muita gente fala que terapia é um autocuidado. E eu não discordo totalmente. Mas, na verdade, vocês, psicólogos, têm uma importância fundamental no processo, encaminhando nossas mentes e nossos pensamentos, para que, assim, façamos um trabalho de autoavaliação, mas que, sem vocês, não seria possível. Então venho aqui te agradecer com todo o meu coração, por me ensinar a me cuidar e a cuidar melhor dos meus!</blockquote>
+            <p class="depoimento-author">Bruna Valverde</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Rebeca Magalhães, dotada de inteligência rara e independência profissional, vem se destacando, há tempos, na área. Todo o êxito do mundo para você, minha querida, doce e inteligente Rebeca!</blockquote>
+            <p class="depoimento-author">Marcondes Franco · Psiquiatra em Belo Horizonte, MG</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Foi inspirador ver tanto conhecimento sendo compartilhado, experiências trocadas com tanta generosidade. Seu trabalho como psicóloga é incrível e faz toda a diferença. Você leva sensibilidade, profissionalismo e propósito por onde passa.</blockquote>
+            <p class="depoimento-author">Tatiana Freitas · Nova Iorque</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Me ajuda todos os dias em todos os momentos a ver cores quando tudo está tão sombrio. Mesmo quando me questiono se sou capaz ou merecedora, ela está ali me mostrando que sim. Todas as palavras seriam insuficientes pra agradecer.</blockquote>
+            <p class="depoimento-author">Fabiana Oliveira</p>
+          </div>
+          <div class="depoimento-card fade-in">
+            <blockquote>Gostaríamos de agradecer imensamente a sua parceria com a nossa Escola. A sua presença, o cuidado, a escuta atenta e o olhar sensível que dedica às crianças fazem toda a diferença no nosso dia a dia. Caminhar junto com uma profissional tão comprometida fortalece nosso trabalho e enriquece o desenvolvimento de cada criança.</blockquote>
+            <p class="depoimento-author">Escola da Gente · Governador Valadares</p>
+          </div>
         </div>
-        <div class="depoimento-card fade-in">
-          <blockquote>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo.</blockquote>
-          <p class="depoimento-author">João P.</p>
-        </div>
-        <div class="depoimento-card fade-in">
-          <blockquote>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur.</blockquote>
-          <p class="depoimento-author">Ana L.</p>
-        </div>
-        <div class="depoimento-card fade-in">
-          <blockquote>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</blockquote>
-          <p class="depoimento-author">Carlos R.</p>
+        <div class="depoimento-nav">
+          <button onclick="scrollDepoimentos(-1)" aria-label="Anterior">&larr;</button>
+          <div class="depoimento-dots">
+            <div class="depoimento-dot active"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+          </div>
+          <button onclick="scrollDepoimentos(1)" aria-label="Próximo">&rarr;</button>
         </div>
       </div>
     </div>
@@ -1636,11 +1720,12 @@
       <p class="section-label fade-in">Nosso Espaço</p>
       <h2 class="section-title fade-in">Conheça nossas salas</h2>
       <div class="espaco-grid fade-in">
-        <div class="espaco-item"><span class="espaco-label">Recepção</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala 01</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala 02</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala 03</span></div>
-        <div class="espaco-item"><span class="espaco-label">Jardim</span></div>
+        <div class="espaco-item"><span class="espaco-label">Recepção e Acolhimento</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala de Atendimento Adultos</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala Infantojuvenil e Grupos</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala de Acolhimento e Triagem</span></div>
+        <div class="espaco-item"><span class="espaco-label">Sala de Atendimento</span></div>
+        <div class="espaco-item"><span class="espaco-label">Galeria</span></div>
       </div>
     </div>
   </section>
@@ -1655,23 +1740,29 @@
       <div class="equipe-block fade-in">
         <h3 class="equipe-block-title">Equipe Clínica</h3>
         <div class="equipe-grid">
-          <a href="equipe-rebeca.html" class="equipe-card" style="text-decoration:none;color:inherit;">
+          <a href="equipe-rebeca.html" class="equipe-card">
             <div class="equipe-avatar"></div>
-            <h3>Rebeca Magalhães</h3>
-            <p class="equipe-role">Psicóloga Clínica</p>
-            <p class="equipe-crp">CRP: 04/30791</p>
-            <span class="equipe-instagram">@rebecammagalhaes</span>
-            <span class="equipe-link">Saiba mais &rarr;</span>
+            <div class="equipe-card-info">
+              <h3>Rebeca Magalhães</h3>
+              <p class="equipe-role">Psicóloga Clínica · Fundadora do Instituto</p>
+              <p class="equipe-crp">CRP: 04/30791</p>
+              <span class="equipe-instagram">@rebecammagalhaes</span>
+              <p class="equipe-desc">Psicóloga clínica com atuação baseada na Análise do Comportamento, dedicada a ajudar pessoas a entenderem o que mantém seus comportamentos e a construírem novas formas de agir diante do que sentem.</p>
+              <p class="equipe-desc">Aqui, não se trata de controlar emoções, mas de aprender o que fazer com elas. Seu trabalho une ciência e afeto na condução clínica, com foco em mudanças reais, que possam ser sustentadas na vida cotidiana.</p>
+              <span class="equipe-link">Saiba mais &rarr;</span>
+            </div>
           </a>
-          <a href="equipe-rodrigo.html" class="equipe-card" style="text-decoration:none;color:inherit;">
+          <a href="equipe-rodrigo.html" class="equipe-card">
             <div class="equipe-avatar"></div>
-            <h3>Rodrigo Mendes</h3>
-            <p class="equipe-role">Psicólogo Clínico</p>
-            <p class="equipe-crp">CRP: (atualização)</p>
-            <span class="equipe-instagram">@rodrigomendespsicologo</span>
-            <p class="equipe-desc">Atua com base na Análise do Comportamento, conduzindo processos terapêuticos com uma abordagem simples, acessível e implicada com a realidade de cada pessoa.</p>
-            <p class="equipe-desc">Realiza atendimentos clínicos individuais e atua na terapia de casal a partir de um modelo desenvolvido no Instituto, conduzido em parceria entre dois terapeutas, permitindo uma leitura mais ampla e integrada das relações.</p>
-            <span class="equipe-link">Saiba mais &rarr;</span>
+            <div class="equipe-card-info">
+              <h3>Rodrigo Mendes</h3>
+              <p class="equipe-role">Psicólogo Clínico</p>
+              <p class="equipe-crp">CRP: 04/80043</p>
+              <span class="equipe-instagram">@rodrigomendespsicologo</span>
+              <p class="equipe-desc">Atua com base na Análise do Comportamento, conduzindo processos terapêuticos com uma abordagem simples, acessível e implicada com a realidade de cada pessoa.</p>
+              <p class="equipe-desc">Realiza atendimentos clínicos individuais e atua na terapia de casal a partir de um modelo desenvolvido no Instituto, conduzido em parceria entre dois terapeutas, permitindo uma leitura mais ampla e integrada das relações.</p>
+              <span class="equipe-link">Saiba mais &rarr;</span>
+            </div>
           </a>
         </div>
       </div>
@@ -1682,17 +1773,21 @@
         <div class="equipe-grid">
           <div class="equipe-card">
             <div class="equipe-avatar"></div>
-            <h3>Celine Oliveira Barros</h3>
-            <p class="equipe-role">Graduanda em Psicologia – Vancouver Island University, Canadá 🇨🇦</p>
-            <p class="equipe-desc">Integra as atividades de formação do Instituto, participando de projetos que articulam psicologia e arte, com produção de material acadêmico e desenvolvimento teórico-prático em Análise do Comportamento.</p>
-            <p class="equipe-desc">Também é responsável pelo manejo e pela organização do site do Instituto e pelo quadro "Estante da Cel", com análises e indicações de leitura.</p>
+            <div class="equipe-card-info">
+              <h3>Celine Oliveira Barros</h3>
+              <p class="equipe-role">Graduanda em Psicologia – Vancouver Island University, Canadá 🇨🇦</p>
+              <p class="equipe-desc">Integra as atividades de formação do Instituto, participando de projetos que articulam psicologia e arte, com produção de material acadêmico e desenvolvimento teórico-prático em Análise do Comportamento.</p>
+              <p class="equipe-desc">Também é responsável pelo manejo e pela organização do site do Instituto e pelo quadro "Estante da Cel", com análises e indicações de leitura.</p>
+            </div>
           </div>
           <div class="equipe-card">
             <div class="equipe-avatar"></div>
-            <h3>Júlia Braga Leite</h3>
-            <p class="equipe-role">Graduanda em Psicologia – Coastal Carolina University, Estados Unidos 🇺🇸</p>
-            <p class="equipe-desc">Atua em atividades de formação e apoio clínico, incluindo participação como acompanhante terapêutica (AT) em atendimentos, em parceria com sua universidade.</p>
-            <p class="equipe-desc">Também coordena as publicações do Instituto, contribuindo para a comunicação e produção de conteúdo.</p>
+            <div class="equipe-card-info">
+              <h3>Júlia Braga Leite</h3>
+              <p class="equipe-role">Graduanda em Psicologia – Coastal Carolina University, Estados Unidos 🇺🇸</p>
+              <p class="equipe-desc">Atua em atividades de formação e apoio clínico, incluindo participação como acompanhante terapêutica (AT) em atendimentos, em parceria com sua universidade.</p>
+              <p class="equipe-desc">Também coordena as publicações do Instituto, contribuindo para a comunicação e produção de conteúdo.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1700,14 +1795,16 @@
       <!-- Bloco 3: Práticas Integrativas -->
       <div class="equipe-block fade-in">
         <h3 class="equipe-block-title">Práticas Integrativas</h3>
-        <div class="equipe-grid equipe-grid-single">
+        <div class="equipe-grid">
           <div class="equipe-card">
             <div class="equipe-avatar"></div>
-            <h3>Gabriela Magalhães</h3>
-            <p class="equipe-role">Instrutora de Dança e Coreógrafa</p>
-            <p class="equipe-desc">Conduz atividades voltadas à expressão emocional por meio da dança, favorecendo o contato com o corpo e a ampliação de repertórios expressivos.</p>
-            <p class="equipe-desc">Desenvolve trabalhos com crianças e idosos, utilizando a dança como recurso para promoção de bem-estar, vínculo e expressão emocional.</p>
-            <p class="equipe-desc">Sua atuação compõe as práticas complementares do Instituto.</p>
+            <div class="equipe-card-info">
+              <h3>Gabriela Magalhães</h3>
+              <p class="equipe-role">Instrutora de Dança e Coreógrafa</p>
+              <p class="equipe-desc">Conduz atividades voltadas à expressão emocional por meio da dança, favorecendo o contato com o corpo e a ampliação de repertórios expressivos.</p>
+              <p class="equipe-desc">Desenvolve trabalhos com crianças e idosos, utilizando a dança como recurso para promoção de bem-estar, vínculo e expressão emocional.</p>
+              <p class="equipe-desc">Sua atuação compõe as práticas complementares do Instituto.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -1759,6 +1856,21 @@
   </a>
 
   <script>
+    // Depoimentos carousel
+    let currentDepoimento = 0;
+    const depoCards = document.querySelectorAll('.depoimento-card');
+    const depoDots = document.querySelectorAll('.depoimento-dot');
+
+    function scrollDepoimentos(direction) {
+      currentDepoimento += direction;
+      if (currentDepoimento < 0) currentDepoimento = depoCards.length - 1;
+      if (currentDepoimento >= depoCards.length) currentDepoimento = 0;
+      depoCards.forEach(c => c.classList.remove('active'));
+      depoDots.forEach(d => d.classList.remove('active'));
+      depoCards[currentDepoimento].classList.add('active');
+      depoDots[currentDepoimento].classList.add('active');
+    }
+
     // Navbar scroll
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
