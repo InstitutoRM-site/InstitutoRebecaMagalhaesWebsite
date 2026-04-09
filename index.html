@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
@@ -1018,18 +1019,19 @@
 
     .espaco-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px; margin-top: 48px;
     }
 
     .espaco-item {
-      aspect-ratio: 1;
+      aspect-ratio: 4/3;
       background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
+      background-size: cover;
+      background-position: center;
       border-radius: 4px;
       position: relative; overflow: hidden; cursor: pointer;
     }
 
-    .espaco-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: 1; }
 
     .espaco-item .espaco-label {
       position: absolute; bottom: 16px; left: 16px;
@@ -1355,7 +1357,6 @@
       .servicos-grid { grid-template-columns: 1fr; }
       .depoimento-card { padding: 32px; }
       .espaco-grid { grid-template-columns: 1fr 1fr; }
-      .espaco-item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
       .equipe-grid { max-width: 100%; }
       .equipe-card { gap: 20px; padding: 24px; }
       .contato-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1374,7 +1375,6 @@
       .nav-inner { padding: 14px 24px; }
       .hero { padding: 100px 24px 60px; }
       .espaco-grid { grid-template-columns: 1fr; }
-      .espaco-item:first-child { grid-column: span 1; }
       .equipe-grid { max-width: 100%; }
       .equipe-card { flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 24px 20px; }
       .equipe-avatar { margin: 0 auto; }
@@ -1462,7 +1462,7 @@
     </div>
     <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-hero-cta" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Quero iniciar meu processo
+      Quero agendar uma sessão
     </a>
   </section>
 
@@ -1485,7 +1485,7 @@
         <div class="briefing-values fade-in">
           <div class="briefing-value">
             <h3>Missão</h3>
-            <p>Promover mudanças reais na vida das pessoas por meio de uma psicologia baseada em ciência e conduzida com afeto, ajudando cada indivíduo a compreender o que mantém seus comportamentos e a construir novas formas de agir diante do que sente.</p>
+            <p>teste Promover mudanças reais na vida das pessoas por meio de uma psicologia baseada em ciência e conduzida com afeto, ajudando cada indivíduo a compreender o que mantém seus comportamentos e a construir novas formas de agir diante do que sente.</p>
           </div>
           <div class="briefing-value">
             <h3>Visão</h3>
@@ -1628,7 +1628,7 @@
       </div>
       <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-whatsapp-agendar fade-in" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero iniciar meu processo
+        Quero agendar uma sessão
       </a>
     </div>
   </section>
@@ -1720,12 +1720,10 @@
       <p class="section-label fade-in">Nosso Espaço</p>
       <h2 class="section-title fade-in">Conheça nossas salas</h2>
       <div class="espaco-grid fade-in">
-        <div class="espaco-item"><span class="espaco-label">Recepção e Acolhimento</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala de Atendimento Adultos</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala Infantojuvenil e Grupos</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala de Acolhimento e Triagem</span></div>
-        <div class="espaco-item"><span class="espaco-label">Sala de Atendimento</span></div>
-        <div class="espaco-item"><span class="espaco-label">Galeria</span></div>
+        <div class="espaco-item" style="background-image: url('images/recepcao.jpg')"><span class="espaco-label">Recepção e Acolhimento</span></div>
+        <div class="espaco-item" style="background-image: url('images/sala-infantil.jpg')"><span class="espaco-label">Sala Infantojuvenil e Grupos</span></div>
+        <div class="espaco-item" style="background-image: url('images/sala-atendimento.jpg')"><span class="espaco-label">Sala de Atendimento</span></div>
+        <div class="espaco-item" style="background-image: url('images/galeria.jpg')"><span class="espaco-label">Galeria</span></div>
       </div>
     </div>
   </section>
@@ -1852,7 +1850,7 @@
   <!-- WHATSAPP FLOATING BUTTON -->
   <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="whatsapp-tooltip">Quero iniciar meu processo</span>
+    <span class="whatsapp-tooltip">Quero agendar uma sessão</span>
   </a>
 
   <script>
