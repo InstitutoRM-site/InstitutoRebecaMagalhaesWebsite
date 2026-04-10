@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
@@ -7,7 +8,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
   <link rel="apple-touch-icon" href="images/Logo.png">
   <link rel="shortcut icon" href="images/Logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap" rel="stylesheet">
   <style>
     @font-face {
       font-family: 'Calligraphy';
@@ -152,6 +152,13 @@
       border-radius: 50%;
       background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
       flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .profile-intro h1 {
@@ -195,6 +202,25 @@
       font-size: 0.95rem;
       line-height: 1.9;
       margin-bottom: 12px;
+    }
+
+    .interview-item {
+      margin-bottom: 28px;
+    }
+
+    .interview-item .question {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--color-brown);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .interview-item .answer {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.9;
     }
 
     .profile-section ul {
@@ -285,49 +311,67 @@
 
   <div class="profile">
     <div class="profile-header">
-      <div class="profile-avatar"></div>
+      <div class="profile-avatar">
+        <!-- TROCAR: Adicione a foto de perfil da Rebeca -->
+        <img src="images/equipe-rebeca.jpg" alt="Rebeca Magalhães">
+      </div>
       <div class="profile-intro">
         <h1>Rebeca Magalhães</h1>
-        <p class="profile-role">Diretora &middot; Psicóloga Clínica</p>
-        <!-- TROCAR: Substitua o CRP abaixo pelo número real -->
-        <p class="profile-crp">CRP 00/0000</p>
+        <p class="profile-role">Diretora &middot; Psicóloga Clínica &middot; Analista do Comportamento</p>
+        <p class="profile-crp">CRP 04/34083</p>
       </div>
     </div>
 
     <div class="profile-section">
       <h2>Sobre</h2>
-      <!-- TROCAR: Substitua os textos abaixo pela bio real da Rebeca -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a. Proin consequat auctor diam.</p>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+      <!-- TROCAR: Substitua os lorem ipsum pelas respostas reais da entrevista -->
+      <div class="interview-item">
+        <p class="question">O que te levou a escolher a psicologia?</p>
+        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a.</p>
+      </div>
+      <div class="interview-item">
+        <p class="question">Como surgiu a ideia de criar o Instituto?</p>
+        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+      </div>
+      <div class="interview-item">
+        <p class="question">O que é a Análise do Comportamento e por que você escolheu essa abordagem?</p>
+        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+      </div>
+      <div class="interview-item">
+        <p class="question">O que te motiva no dia a dia como psicóloga?</p>
+        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+      </div>
+      <div class="interview-item">
+        <p class="question">Que mensagem você deixaria para quem está pensando em iniciar terapia?</p>
+        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
     </div>
 
     <div class="profile-section">
       <h2>Formação</h2>
       <!-- TROCAR: Substitua os itens abaixo pela formação real -->
       <ul>
-        <li>Graduação em Psicologia — Universidade Lorem Ipsum</li>
-        <li>Pós-graduação em Psicologia Clínica — Instituto Dolor Amet</li>
-        <li>Especialização em Terapia Cognitivo-Comportamental</li>
+        <li>Graduação em Psicologia</li>
+        <li>Especialização em Análise do Comportamento</li>
       </ul>
     </div>
 
     <div class="profile-section">
       <h2>Áreas de Atuação</h2>
-      <!-- TROCAR: Substitua os itens abaixo pelas áreas reais -->
       <ul>
-        <li>Psicoterapia individual para adultos</li>
-        <li>Avaliação psicológica</li>
-        <li>Orientação profissional e de carreira</li>
-        <li>Atendimento a casais</li>
+        <li>Psicoterapia individual (adultos e adolescentes)</li>
+        <li>Supervisão clínica em Análise do Comportamento</li>
+        <li>Ensino e formação em Análise do Comportamento</li>
+        <li>Grupo de estudos semanal</li>
       </ul>
     </div>
 
-    <a href="index.html#equipe" class="btn-voltar">&larr; Voltar para Equipe</a>
+    <a href="index.html#equipe" class="btn-voltar">&larr; Voltar para página principal</a>
   </div>
 
   <footer>
     <p class="footer-logo">Instituto Rebeca Magalhães</p>
-    <p>&copy; 2024 Instituto Rebeca Magalhães.</p>
+    <p>&copy; 2025 Instituto Rebeca Magalhães.</p>
   </footer>
 
   <script>
