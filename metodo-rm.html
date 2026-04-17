@@ -1,10 +1,10 @@
-\
+
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rodrigo Mendes — Instituto Rebeca Magalhães</title>
+  <title>Método RM — Terapia de Casal com Dupla Condução Clínica | Instituto Rebeca Magalhães</title>
   <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
   <link rel="apple-touch-icon" href="images/Logo.png">
   <link rel="shortcut icon" href="images/Logo.png">
@@ -65,6 +65,7 @@
       line-height: 1.7;
     }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -131,6 +132,13 @@
     [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
     [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 
+    /* PAGE CONTENT */
+    .page-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
     .btn-home {
       position: fixed;
       top: 80px;
@@ -169,97 +177,100 @@
       stroke: #fff;
     }
 
-    .profile {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 120px 40px 80px;
+    .page-header {
+      text-align: center;
+      margin-bottom: 56px;
     }
 
-    .profile-header {
-      display: flex;
-      gap: 48px;
-      align-items: center;
-      margin-bottom: 48px;
-    }
-
-    .profile-avatar {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .profile-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .profile-intro h1 {
-      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
-      font-weight: 400;
-      font-size: 2.8rem;
-      color: var(--color-green);
-      margin-bottom: 4px;
-    }
-
-    .profile-intro .profile-role {
-      font-size: 0.8rem;
-      letter-spacing: 2px;
+    .page-label {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--color-taupe-dark);
+      color: var(--color-green);
       margin-bottom: 16px;
     }
 
-    .profile-intro .profile-crp {
-      font-size: 0.85rem;
-      color: var(--color-taupe);
+    .page-header h1 {
+      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
+      font-weight: 400;
+      font-size: 3.2rem;
+      color: var(--color-green);
+      margin-bottom: 8px;
     }
 
-    .profile-section { margin-bottom: 40px; }
+    .page-header .page-subtitle {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--color-brown);
+    }
 
-    .profile-section h2 {
+    .page-divider {
+      width: 60px;
+      height: 1.5px;
+      background: var(--color-taupe);
+      margin: 0 auto 56px;
+    }
+
+    /* INTRO - poetic opening */
+    .method-intro {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .method-intro p {
+      color: var(--color-text-light);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 2.2;
+      margin-bottom: 8px;
+    }
+
+    .method-intro p:last-child {
+      margin-top: 20px;
+      font-style: normal;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.95rem;
+      color: var(--color-taupe-dark);
+    }
+
+    .method-intro .intro-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--color-beige);
+      margin: 24px auto;
+    }
+
+    /* SECTIONS */
+    .method-section {
+      margin-bottom: 48px;
+    }
+
+    .method-section h2 {
       font-family: 'Georgia', 'Times New Roman', serif;
       font-style: italic;
       font-weight: 400;
       font-size: 1.4rem;
       color: var(--color-brown);
-      margin-bottom: 16px;
-      padding-bottom: 8px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
       border-bottom: 1px solid var(--color-beige);
     }
 
-    .profile-section p {
+    .method-section p {
       color: var(--color-text-light);
       font-size: 0.95rem;
-      line-height: 1.9;
-      margin-bottom: 12px;
+      line-height: 2;
+      margin-bottom: 16px;
     }
 
-    .interview-item {
-      margin-bottom: 28px;
+    .method-section ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .interview-item .question {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--color-brown);
-      margin-bottom: 8px;
-      font-weight: 400;
-    }
-
-    .interview-item .answer {
-      color: var(--color-text-light);
-      font-size: 0.95rem;
-      line-height: 1.9;
-    }
-
-    .profile-section ul { list-style: none; padding: 0; }
-
-    .profile-section ul li {
+    .method-section ul li {
       color: var(--color-text-light);
       font-size: 0.95rem;
       line-height: 1.9;
@@ -267,7 +278,7 @@
       position: relative;
     }
 
-    .profile-section ul li::before {
+    .method-section ul li::before {
       content: '';
       position: absolute;
       left: 0;
@@ -278,9 +289,86 @@
       background: var(--color-green);
     }
 
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-beige);
+      border-radius: 4px;
+      padding: 40px 48px;
+      margin: 56px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 40px; height: 3px;
+      background: var(--color-green);
+      border-radius: 0 0 4px 4px;
+    }
+
+    .highlight-box p {
+      color: var(--color-text-light);
+      font-size: 1.05rem;
+      line-height: 2;
+      margin-bottom: 0;
+    }
+
+    .highlight-box p em {
+      color: var(--color-brown);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.1rem;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .cta-section p {
+      color: var(--color-text-light);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .btn-agendar {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--color-green);
+      color: #fff;
+      border: none;
+      padding: 16px 36px;
+      font-family: inherit;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(91, 122, 94, 0.25);
+    }
+
+    .btn-agendar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(91, 122, 94, 0.35);
+    }
+
+    .btn-agendar svg {
+      width: 20px; height: 20px;
+      fill: #fff;
+    }
+
     .btn-voltar {
       display: inline-block;
-      margin-top: 40px;
+      margin-top: 24px;
       text-decoration: none;
       color: var(--color-green);
       font-size: 0.8rem;
@@ -297,6 +385,7 @@
       color: #fff;
     }
 
+    /* FOOTER */
     footer {
       background: var(--color-footer-bg);
       padding: 40px;
@@ -312,11 +401,13 @@
       margin-bottom: 12px;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 600px) {
-      .profile { padding: 100px 24px 60px; }
-      .profile-header { flex-direction: column; text-align: center; gap: 24px; }
-      .profile-avatar { width: 150px; height: 150px; }
+      .page-content { padding: 100px 24px 60px; }
+      .page-header { text-align: center; }
+      .page-header h1 { font-size: 2.2rem; }
       .nav-inner { padding: 14px 24px; }
+      .highlight-box { padding: 24px; }
       .btn-home { top: 72px; left: 16px; width: 36px; height: 36px; }
       .btn-home svg { width: 16px; height: 16px; }
     }
@@ -344,60 +435,48 @@
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
   </a>
 
-  <div class="profile">
-    <div class="profile-header">
-      <div class="profile-avatar">
-        <!-- TROCAR: Adicione a foto de perfil do Rodrigo -->
-        <img src="images/equipe-rodrigo.jpg" alt="Rodrigo Mendes">
-      </div>
-      <div class="profile-intro">
-        <h1>Rodrigo Mendes</h1>
-        <p class="profile-role">Psicólogo Clínico</p>
-        <p class="profile-crp">CRP 04/80043</p>
-      </div>
+  <div class="page-content">
+    <div class="page-header">
+      <p class="page-label">Terapia de Casal</p>
+      <h1>Método RM</h1>
+      <p class="page-subtitle">Dupla Condução Clínica em Terapia de Casal</p>
     </div>
 
-    <div class="profile-section">
-      <h2>Sobre</h2>
-      <!-- TROCAR: Substitua os lorem ipsum pelas respostas reais da entrevista -->
-      <div class="interview-item">
-        <p class="question">O que te levou a escolher a psicologia?</p>
-        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras porttitor metus justo, ut fringilla velit fermentum a.</p>
-      </div>
-      <div class="interview-item">
-        <p class="question">Como é trabalhar no Instituto Rebeca Magalhães?</p>
-        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-      </div>
-      <div class="interview-item">
-        <p class="question">O que é a Análise do Comportamento e por que você escolheu essa abordagem?</p>
-        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
-      </div>
-      <div class="interview-item">
-        <p class="question">O que te motiva no dia a dia como psicólogo?</p>
-        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-      </div>
-      <div class="interview-item">
-        <p class="question">Que mensagem você deixaria para quem está pensando em iniciar terapia?</p>
-        <p class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      </div>
+    <div class="page-divider"></div>
+
+    <div class="method-intro">
+      <p>Nem todo casal que chega até aqui está vivendo a mesma fase.</p>
+      <p>Alguns ainda se amam, mas não conseguem mais se encontrar.</p>
+      <p>Outros se veem presos nas mesmas discussões, repetindo cenas que já conhecem de cor.</p>
+      <p>E há aqueles que, mesmo juntos, já se sentem distantes há muito tempo.</p>
+      <div class="intro-divider"></div>
+      <p>O mais difícil, muitas vezes, não é a falta de tentativa. É perceber que, apesar de tudo o que já foi conversado... nada realmente muda.</p>
     </div>
 
-    <div class="profile-section">
-      <h2>Formação</h2>
-      <!-- TROCAR: Substitua os itens abaixo pela formação real -->
-      <ul>
-        <li>Graduação em Psicologia</li>
-      </ul>
+    <div class="method-section">
+      <h2>O Método RM</h2>
+      <p>Foi a partir dessa realidade que desenvolvemos o Método RM de Terapia de Casal com Dupla Condução Clínica.</p>
+      <p>Porque, na maioria das vezes, o problema não é falta de conversa — é a repetição de padrões que continuam acontecendo, mesmo quando já não fazem mais sentido.</p>
     </div>
 
-    <div class="profile-section">
-      <h2>Áreas de Atuação</h2>
-      <ul>
-        <li>Psicoterapia individual</li>
-        <li>Atendimento clínico de adultos e adolescentes</li>
-      </ul>
+    <div class="method-section">
+      <h2>Como funciona?</h2>
+      <p>Cada parceiro é acompanhado individualmente por um psicólogo, enquanto o casal também participa de sessões conjuntas com ambos os profissionais.</p>
+      <p>Assim, é possível compreender não apenas o que acontece entre os dois, mas também o que cada um traz e mantém dentro da relação.</p>
+      <p>O foco não é buscar culpados. É entender o que está sendo repetido e construir novas formas de se relacionar, com mudanças que realmente se sustentem fora do consultório.</p>
     </div>
 
+    <div class="highlight-box">
+      <p><em>"Relações não mudam apenas com intenção. Mudam quando cada um aprende, de fato, a fazer diferente."</em></p>
+    </div>
+
+    <div class="cta-section">
+      <p>Quer saber mais sobre o Método RM ou agendar uma sessão de terapia de casal?</p>
+      <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20M%C3%A9todo%20RM%20de%20Terapia%20de%20Casal." class="btn-agendar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero saber mais
+      </a>
+    </div>
   </div>
 
   <footer>
