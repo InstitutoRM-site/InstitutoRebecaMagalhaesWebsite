@@ -3,13 +3,6 @@
 <html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <script>
-  (function() {
-    const saved = localStorage.getItem('theme');
-    if (saved) document.documentElement.setAttribute('data-theme', saved);
-    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark');
-  })();
-</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Método RM — Terapia de Casal com Dupla Condução Clínica | Instituto Rebeca Magalhães</title>
   <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
@@ -30,8 +23,8 @@
       --color-taupe: #B8A99A;
       --color-taupe-dark: #9A8B7A;
       --color-brown: #7A6B5A;
-      --color-green: #4A5A2B;
-      --color-green-light: #5E6E3A;
+      --color-green: #5B7A5E;
+      --color-green-light: #6E8E71;
       --color-text: #4A3F35;
       --color-text-light: #8A7D70;
       --color-white: #FDFBF8;
@@ -146,251 +139,107 @@
       padding: 120px 40px 80px;
     }
 
-    .btn-home {
-      position: fixed;
-      top: 80px;
-      left: 24px;
-      z-index: 99;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--color-card-bg);
-      border: 1px solid var(--color-beige);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: all 0.3s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+    .btn-home { position: fixed; top: 80px; left: 24px; z-index: 99; width: 40px; height: 40px; border-radius: 50%; background: var(--color-card-bg); border: 1px solid var(--color-beige); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .btn-home:hover { background: var(--color-green); border-color: var(--color-green); }
+    .btn-home svg { width: 18px; height: 18px; stroke: var(--color-brown); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
+    .btn-home:hover svg { stroke: #fff; }
 
-    .btn-home:hover {
-      background: var(--color-green);
-      border-color: var(--color-green);
-    }
+    .page-header { text-align: center; margin-bottom: 48px; }
+    .page-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-green); margin-bottom: 16px; }
+    .page-header h1 { font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive; font-weight: 400; font-size: 3.2rem; color: var(--color-green); margin-bottom: 8px; }
+    .page-header .page-subtitle { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; color: var(--color-brown); }
+    .page-divider { width: 60px; height: 1.5px; background: var(--color-taupe); margin: 0 auto 48px; }
 
-    .btn-home svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--color-brown);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: stroke 0.3s;
-    }
-
-    .btn-home:hover svg {
-      stroke: #fff;
-    }
-
-    .page-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .page-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--color-green);
-      margin-bottom: 16px;
-    }
-
-    .page-header h1 {
-      font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive;
-      font-weight: 400;
-      font-size: 3.2rem;
-      color: var(--color-green);
-      margin-bottom: 8px;
-    }
-
-    .page-header .page-subtitle {
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--color-brown);
-    }
-
-    .page-divider {
-      width: 60px;
-      height: 1.5px;
-      background: var(--color-taupe);
-      margin: 0 auto 56px;
-    }
-
-    /* INTRO - poetic opening */
-    .method-intro {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .method-intro p {
+    /* INTRO - clean paragraph */
+    .intro-text {
       color: var(--color-text-light);
-      font-family: 'Georgia', 'Times New Roman', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 2.2;
-      margin-bottom: 8px;
-    }
-
-    .method-intro p:last-child {
-      margin-top: 20px;
-      font-style: normal;
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
       font-size: 0.95rem;
-      color: var(--color-taupe-dark);
-    }
-
-    .method-intro .intro-divider {
-      width: 40px;
-      height: 1px;
-      background: var(--color-beige);
-      margin: 24px auto;
-    }
-
-    /* SECTIONS */
-    .method-section {
+      line-height: 2;
       margin-bottom: 48px;
     }
 
-    .method-section h2 {
+    /* SECTIONS */
+    .section-block {
+      margin-bottom: 40px;
+    }
+
+    .section-block h2 {
       font-family: 'Georgia', 'Times New Roman', serif;
       font-style: italic;
       font-weight: 400;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: var(--color-brown);
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--color-beige);
-    }
-
-    .method-section p {
-      color: var(--color-text-light);
-      font-size: 0.95rem;
-      line-height: 2;
       margin-bottom: 16px;
     }
 
-    .method-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .method-section ul li {
+    .section-block p {
       color: var(--color-text-light);
       font-size: 0.95rem;
-      line-height: 1.9;
-      padding-left: 20px;
-      position: relative;
+      line-height: 2;
+      margin-bottom: 12px;
     }
 
-    .method-section ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--color-green);
+    /* FEATURE CARDS */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
     }
 
-    /* HIGHLIGHT BOX */
-    .highlight-box {
+    .feature-card {
       background: var(--color-card-bg);
       border: 1px solid var(--color-beige);
-      border-radius: 4px;
-      padding: 40px 48px;
-      margin: 56px 0;
-      text-align: center;
-      position: relative;
+      border-radius: 6px;
+      padding: 24px;
     }
 
-    .highlight-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 40px; height: 3px;
-      background: var(--color-green);
-      border-radius: 0 0 4px 4px;
+    .feature-card h4 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--color-brown);
+      margin-bottom: 8px;
     }
 
-    .highlight-box p {
+    .feature-card p {
+      font-size: 0.88rem;
       color: var(--color-text-light);
-      font-size: 1.05rem;
-      line-height: 2;
+      line-height: 1.7;
       margin-bottom: 0;
     }
 
-    .highlight-box p em {
+    /* LIST */
+    .section-block ul { list-style: none; padding: 0; margin-top: 12px; }
+    .section-block ul li { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.9; padding-left: 20px; position: relative; margin-bottom: 4px; }
+    .section-block ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); }
+
+    /* QUOTE */
+    .quote-block {
+      border-left: 3px solid var(--color-green);
+      padding: 24px 32px;
+      margin: 40px 0;
+      background: var(--color-card-bg);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .quote-block p {
       color: var(--color-brown);
       font-family: 'Georgia', 'Times New Roman', serif;
-      font-size: 1.1rem;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin: 0;
     }
 
     /* CTA */
-    .cta-section {
-      text-align: center;
-      margin-top: 56px;
-      padding-top: 48px;
-      border-top: 1px solid var(--color-beige);
-    }
+    .cta-section { text-align: center; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--color-beige); }
+    .cta-section p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px; }
 
-    .cta-section p {
-      color: var(--color-text-light);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    .btn-agendar {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--color-green);
-      color: #fff;
-      border: none;
-      padding: 16px 36px;
-      font-family: inherit;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(91, 122, 94, 0.25);
-    }
-
-    .btn-agendar:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(91, 122, 94, 0.35);
-    }
-
-    .btn-agendar svg {
-      width: 20px; height: 20px;
-      fill: #fff;
-    }
-
-    .btn-voltar {
-      display: inline-block;
-      margin-top: 24px;
-      text-decoration: none;
-      color: var(--color-green);
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 12px 28px;
-      border: 1.5px solid var(--color-green);
-      border-radius: 4px;
-      transition: all 0.3s;
-    }
-
-    .btn-voltar:hover {
-      background: var(--color-green);
-      color: #fff;
-    }
+    .btn-agendar { display: inline-flex; align-items: center; gap: 10px; background: var(--color-green); color: #fff; border: none; padding: 16px 36px; font-family: inherit; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 50px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(91, 122, 94, 0.25); }
+    .btn-agendar:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(91, 122, 94, 0.35); }
+    .btn-agendar svg { width: 20px; height: 20px; fill: #fff; }
 
     /* FOOTER */
     footer {
@@ -411,10 +260,10 @@
     /* RESPONSIVE */
     @media (max-width: 600px) {
       .page-content { padding: 100px 24px 60px; }
-      .page-header { text-align: center; }
       .page-header h1 { font-size: 2.2rem; }
       .nav-inner { padding: 14px 24px; }
-      .highlight-box { padding: 24px; }
+      .quote-block { padding: 20px 24px; }
+      .feature-grid { grid-template-columns: 1fr; }
       .btn-home { top: 72px; left: 16px; width: 36px; height: 36px; }
       .btn-home svg { width: 16px; height: 16px; }
     }
@@ -451,43 +300,29 @@
 
     <div class="page-divider"></div>
 
-    <div class="method-intro">
-      <p>Nem todo casal que chega até aqui está vivendo a mesma fase.</p>
-      <p>Alguns ainda se amam, mas não conseguem mais se encontrar.</p>
-      <p>Outros se veem presos nas mesmas discussões, repetindo cenas que já conhecem de cor.</p>
-      <p>E há aqueles que, mesmo juntos, já se sentem distantes há muito tempo.</p>
-      <div class="intro-divider"></div>
-      <p>O mais difícil, muitas vezes, não é a falta de tentativa. É perceber que, apesar de tudo o que já foi conversado... nada realmente muda.</p>
+    <div class="intro-text">
+      <p>Nem todo casal que chega até aqui está vivendo a mesma fase. Alguns ainda se amam, mas não conseguem mais se encontrar. Outros se veem presos nas mesmas discussões, repetindo cenas que já conhecem de cor. E há aqueles que, mesmo juntos, já se sentem distantes há muito tempo.</p>
+      <p>O mais difícil, muitas vezes, não é a falta de tentativa — é perceber que, apesar de tudo o que já foi conversado, nada realmente muda.</p>
+      <p>Foi a partir dessa realidade que desenvolvemos o Método RM de Terapia de Casal com Dupla Condução Clínica. Porque, na maioria das vezes, o problema não é falta de conversa — é a repetição de padrões que continuam acontecendo, mesmo quando já não fazem mais sentido.</p>
     </div>
 
-    <div class="method-section">
-      <h2>O Método RM</h2>
-      <p>Foi a partir dessa realidade que desenvolvemos o Método RM de Terapia de Casal com Dupla Condução Clínica.</p>
-      <p>Porque, na maioria das vezes, o problema não é falta de conversa — é a repetição de padrões que continuam acontecendo, mesmo quando já não fazem mais sentido.</p>
-    </div>
-
-    <div class="method-section">
+    <div class="section-block">
       <h2>Como funciona?</h2>
-      <p>Cada parceiro é acompanhado individualmente por um psicólogo, enquanto o casal também participa de sessões conjuntas com ambos os profissionais.</p>
-      <p>Assim, é possível compreender não apenas o que acontece entre os dois, mas também o que cada um traz e mantém dentro da relação.</p>
-      <p>O foco não é buscar culpados. É entender o que está sendo repetido e construir novas formas de se relacionar, com mudanças que realmente se sustentem fora do consultório.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>Atendimento individual</h4>
+          <p>Cada parceiro é acompanhado individualmente por um psicólogo, permitindo um espaço seguro para explorar suas questões pessoais dentro da relação.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Sessões conjuntas</h4>
+          <p>O casal participa de sessões com ambos os profissionais, onde é possível compreender o que acontece entre os dois e o que cada um traz para a dinâmica.</p>
+        </div>
+      </div>
+      <p style="margin-top: 20px;">O foco não é buscar culpados. É entender o que está sendo repetido e construir novas formas de se relacionar, com mudanças que realmente se sustentem fora do consultório.</p>
     </div>
-  <div style="display:flex; gap:24px; margin-top:32px; flex-wrap:wrap;">
-  <div style="flex:1; min-width:180px; text-align:center; padding:24px; background:var(--color-bg); border-radius:8px; border:1px solid var(--color-beige);">
-    <div style="width:48px;height:48px;border-radius:50%;background:var(--color-beige);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--color-brown);border:1px solid var(--color-taupe);">1</div>
-    <p style="font-size:0.85rem;color:var(--color-text-light);line-height:1.6;">Cada parceiro inicia acompanhamento individual com um psicólogo</p>
-  </div>
-  <div style="flex:1; min-width:180px; text-align:center; padding:24px; background:var(--color-bg); border-radius:8px; border:1px solid var(--color-beige);">
-    <div style="width:48px;height:48px;border-radius:50%;background:var(--color-beige);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--color-brown);border:1px solid var(--color-taupe);">2</div>
-    <p style="font-size:0.85rem;color:var(--color-text-light);line-height:1.6;">O casal participa de sessões conjuntas com ambos os profissionais</p>
-  </div>
-  <div style="flex:1; min-width:180px; text-align:center; padding:24px; background:var(--color-bg); border-radius:8px; border:1px solid var(--color-beige);">
-    <div style="width:48px;height:48px;border-radius:50%;background:var(--color-beige);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:Georgia,serif;font-style:italic;font-size:1.2rem;color:var(--color-brown);border:1px solid var(--color-taupe);">3</div>
-    <p style="font-size:0.85rem;color:var(--color-text-light);line-height:1.6;">Mudanças são construídas dentro e fora do consultório</p>
-  </div>
-</div>
-    <div class="highlight-box">
-      <p><em>"Relações não mudam apenas com intenção. Mudam quando cada um aprende, de fato, a fazer diferente."</em></p>
+
+    <div class="quote-block">
+      <p>"Relações não mudam apenas com intenção. Mudam quando cada um aprende, de fato, a fazer diferente."</p>
     </div>
 
     <div class="cta-section">
@@ -496,8 +331,6 @@
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Quero saber mais
       </a>
-      <br>
-      <a href="index.html" class="btn-voltar">← Voltar ao site</a>
     </div>
   </div>
 

@@ -9,60 +9,16 @@
   <link rel="apple-touch-icon" href="images/Logo.png">
   <link rel="shortcut icon" href="images/Logo.png">
   <style>
-    @font-face {
-      font-family: 'Calligraphy';
-      src: local('Great Vibes'), local('Pinyon Script'), local('Brittany Signature'), local('Dancing Script'), local('Parisienne'), local('Alex Brush'), local('Allura'), local('Sacramento');
-      font-weight: 400;
-      font-style: normal;
-    }
+    @font-face { font-family: 'Calligraphy'; src: local('Great Vibes'), local('Pinyon Script'), local('Brittany Signature'), local('Dancing Script'), local('Parisienne'), local('Alex Brush'), local('Allura'), local('Sacramento'); font-weight: 400; font-style: normal; }
 
-    :root, [data-theme="light"] {
-      --color-bg: #F5F0EB;
-      --color-cream: #EDE6DC;
-      --color-beige: #D9CCBC;
-      --color-taupe: #B8A99A;
-      --color-taupe-dark: #9A8B7A;
-      --color-brown: #7A6B5A;
-      --color-green: #5B7A5E;
-      --color-green-light: #6E8E71;
-      --color-text: #4A3F35;
-      --color-text-light: #8A7D70;
-      --color-white: #FDFBF8;
-      --color-card-bg: #FDFBF8;
-      --color-alt-bg: #FDFBF8;
-      --nav-bg: rgba(245, 240, 235, 0.95);
-      --color-footer-bg: #4A3F35;
-    }
-
-    [data-theme="dark"] {
-      --color-bg: #1C1915;
-      --color-cream: #2A2520;
-      --color-beige: #3D362E;
-      --color-taupe: #7A6E60;
-      --color-taupe-dark: #9A8D7E;
-      --color-brown: #C4B5A2;
-      --color-green: #7BA37E;
-      --color-green-light: #8FB892;
-      --color-text: #E8E0D6;
-      --color-text-light: #A69D90;
-      --color-white: #232019;
-      --color-card-bg: #262220;
-      --color-alt-bg: #201D19;
-      --nav-bg: rgba(28, 25, 21, 0.95);
-      --color-footer-bg: #141210;
-    }
+    :root, [data-theme="light"] { --color-bg: #F5F0EB; --color-cream: #EDE6DC; --color-beige: #D9CCBC; --color-taupe: #B8A99A; --color-taupe-dark: #9A8B7A; --color-brown: #7A6B5A; --color-green: #5B7A5E; --color-green-light: #6E8E71; --color-text: #4A3F35; --color-text-light: #8A7D70; --color-white: #FDFBF8; --color-card-bg: #FDFBF8; --color-alt-bg: #FDFBF8; --nav-bg: rgba(245, 240, 235, 0.95); --color-footer-bg: #4A3F35; }
+    [data-theme="dark"] { --color-bg: #1C1915; --color-cream: #2A2520; --color-beige: #3D362E; --color-taupe: #7A6E60; --color-taupe-dark: #9A8D7E; --color-brown: #C4B5A2; --color-green: #7BA37E; --color-green-light: #8FB892; --color-text: #E8E0D6; --color-text-light: #A69D90; --color-white: #232019; --color-card-bg: #262220; --color-alt-bg: #201D19; --nav-bg: rgba(28, 25, 21, 0.95); --color-footer-bg: #141210; }
 
     html { transition: background-color 0.4s ease, color 0.4s ease; }
     body, nav, section, footer { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.7;
-    }
+    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background-color: var(--color-bg); color: var(--color-text); line-height: 1.7; }
 
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-beige); }
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
@@ -71,7 +27,6 @@
     .nav-right { display: flex; align-items: center; gap: 16px; }
     .btn-back { text-decoration: none; color: var(--color-taupe-dark); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s; }
     .btn-back:hover { color: var(--color-brown); }
-
     .theme-toggle { background: none; border: 1.5px solid var(--color-taupe); border-radius: 20px; padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; color: var(--color-taupe-dark); font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s; }
     .theme-toggle:hover { border-color: var(--color-brown); color: var(--color-brown); }
     .theme-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
@@ -80,38 +35,38 @@
     [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 
     .page-content { max-width: 720px; margin: 0 auto; padding: 120px 40px 80px; }
-
     .btn-home { position: fixed; top: 80px; left: 24px; z-index: 99; width: 40px; height: 40px; border-radius: 50%; background: var(--color-card-bg); border: 1px solid var(--color-beige); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .btn-home:hover { background: var(--color-green); border-color: var(--color-green); }
     .btn-home svg { width: 18px; height: 18px; stroke: var(--color-brown); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
     .btn-home:hover svg { stroke: #fff; }
 
-    .page-header { text-align: center; margin-bottom: 56px; }
+    .page-header { text-align: center; margin-bottom: 48px; }
     .page-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-green); margin-bottom: 16px; }
     .page-header h1 { font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive; font-weight: 400; font-size: 3.2rem; color: var(--color-green); margin-bottom: 8px; }
     .page-header .page-subtitle { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; color: var(--color-brown); }
-    .page-divider { width: 60px; height: 1.5px; background: var(--color-taupe); margin: 0 auto 56px; }
+    .page-divider { width: 60px; height: 1.5px; background: var(--color-taupe); margin: 0 auto 48px; }
 
-    .method-intro { text-align: center; margin-bottom: 56px; }
-    .method-intro p { color: var(--color-text-light); font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; line-height: 2.2; margin-bottom: 8px; }
-    .method-intro p:last-child { margin-top: 20px; font-style: normal; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-size: 0.95rem; color: var(--color-taupe-dark); }
-    .method-intro .intro-divider { width: 40px; height: 1px; background: var(--color-beige); margin: 24px auto; }
+    .intro-text { color: var(--color-text-light); font-size: 0.95rem; line-height: 2; margin-bottom: 48px; }
+    .intro-text p { margin-bottom: 12px; }
 
-    .method-section { margin-bottom: 48px; }
-    .method-section h2 { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 1.4rem; color: var(--color-brown); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--color-beige); }
-    .method-section p { color: var(--color-text-light); font-size: 0.95rem; line-height: 2; margin-bottom: 16px; }
-    .method-section ul { list-style: none; padding: 0; }
-    .method-section ul li { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.9; padding-left: 20px; position: relative; }
-    .method-section ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); }
+    .section-block { margin-bottom: 40px; }
+    .section-block h2 { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 1.3rem; color: var(--color-brown); margin-bottom: 16px; }
+    .section-block p { color: var(--color-text-light); font-size: 0.95rem; line-height: 2; margin-bottom: 12px; }
 
-    .highlight-box { background: var(--color-card-bg); border: 1px solid var(--color-beige); border-radius: 4px; padding: 40px 48px; margin: 56px 0; text-align: center; position: relative; }
-    .highlight-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--color-green); border-radius: 0 0 4px 4px; }
-    .highlight-box p { color: var(--color-text-light); font-size: 1.05rem; line-height: 2; margin-bottom: 0; }
-    .highlight-box p em { color: var(--color-brown); font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.1rem; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .feature-card { background: var(--color-card-bg); border: 1px solid var(--color-beige); border-radius: 6px; padding: 24px; }
+    .feature-card h4 { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 1rem; color: var(--color-brown); margin-bottom: 8px; }
+    .feature-card p { font-size: 0.88rem; color: var(--color-text-light); line-height: 1.7; margin-bottom: 0; }
 
-    .cta-section { text-align: center; margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--color-beige); }
+    .section-block ul { list-style: none; padding: 0; margin-top: 12px; }
+    .section-block ul li { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.9; padding-left: 20px; position: relative; margin-bottom: 4px; }
+    .section-block ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); }
+
+    .quote-block { border-left: 3px solid var(--color-green); padding: 24px 32px; margin: 40px 0; background: var(--color-card-bg); border-radius: 0 6px 6px 0; }
+    .quote-block p { color: var(--color-brown); font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; line-height: 1.9; margin: 0; }
+
+    .cta-section { text-align: center; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--color-beige); }
     .cta-section p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px; }
-
     .btn-agendar { display: inline-flex; align-items: center; gap: 10px; background: var(--color-green); color: #fff; border: none; padding: 16px 36px; font-family: inherit; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 50px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(91, 122, 94, 0.25); }
     .btn-agendar:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(91, 122, 94, 0.35); }
     .btn-agendar svg { width: 20px; height: 20px; fill: #fff; }
@@ -124,7 +79,8 @@
       .page-content { padding: 100px 24px 60px; }
       .page-header h1 { font-size: 2.2rem; }
       .nav-inner { padding: 14px 24px; }
-      .highlight-box { padding: 24px; }
+      .quote-block { padding: 20px 24px; }
+      .feature-grid { grid-template-columns: 1fr; }
       .btn-home { top: 72px; left: 16px; width: 36px; height: 36px; }
       .btn-home svg { width: 16px; height: 16px; }
     }
@@ -161,28 +117,26 @@
 
     <div class="page-divider"></div>
 
-    <div class="method-intro">
-      <p>Nem tudo precisa ser resolvido sozinho.</p>
-      <p>Os workshops do Instituto são encontros temáticos que reúnem pessoas em torno de questões reais — com escuta, troca e ferramentas práticas para a vida.</p>
-      <div class="intro-divider"></div>
-      <p>São espaços de aprendizado coletivo, pensados para diferentes públicos e fases da vida.</p>
+    <div class="intro-text">
+      <p>Os workshops do Instituto são encontros temáticos que reúnem pessoas em torno de questões reais — com escuta, troca e ferramentas práticas para a vida. São espaços de aprendizado coletivo, pensados para diferentes públicos e fases da vida.</p>
+      <p>Cada workshop é desenvolvido em torno de um tema específico, conduzido por profissionais do Instituto com base na Análise do Comportamento. Os encontros combinam rodas de conversa, vivências e atividades práticas, criando um ambiente seguro para reflexão e conexão.</p>
     </div>
 
-    <div class="method-section">
-      <h2>Como funcionam?</h2>
-      <p>Cada workshop é desenvolvido em torno de um tema específico, conduzido por profissionais do Instituto com base na Análise do Comportamento.</p>
-      <p>Os encontros combinam rodas de conversa, vivências e atividades práticas, criando um espaço seguro para reflexão, conexão e desenvolvimento de novos repertórios.</p>
-    </div>
-
-    <div class="method-section">
+    <div class="section-block">
       <h2>Workshops realizados</h2>
-      <ul>
-        <li><strong>Workshop das Mães</strong> — Uma roda de conversa para mulheres de diferentes gerações sobre maternidade, culpa e o cuidado possível</li>
-        <li><strong>Workshop Infantil: Dançando e se Conectando com as Emoções</strong> — Atividade voltada para crianças, utilizando a dança como ferramenta de expressão emocional e conexão com o corpo</li>
-      </ul>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>Workshop das Mães</h4>
+          <p>Roda de conversa para mulheres de diferentes gerações sobre maternidade, culpa e o cuidado possível.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Workshop Infantil</h4>
+          <p>Dançando e se conectando com as emoções — atividade para crianças usando a dança como ferramenta de expressão emocional.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="method-section">
+    <div class="section-block">
       <h2>Para quem são indicados?</h2>
       <ul>
         <li>Adultos, adolescentes e crianças — cada workshop é pensado para um público específico</li>
@@ -192,8 +146,8 @@
       </ul>
     </div>
 
-    <div class="highlight-box">
-      <p><em>"Aprender sobre si mesmo não precisa ser solitário. Às vezes, é no encontro com o outro que a mudança começa."</em></p>
+    <div class="quote-block">
+      <p>"Aprender sobre si mesmo não precisa ser solitário. Às vezes, é no encontro com o outro que a mudança começa."</p>
     </div>
 
     <div class="cta-section">
