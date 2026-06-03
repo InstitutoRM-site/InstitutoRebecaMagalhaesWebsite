@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshops | Instituto Rebeca Magalhães</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/Logo.png">
+  <link rel="apple-touch-icon" href="images/Logo.png">
+  <link rel="shortcut icon" href="images/Logo.png">
+  <style>
+    @font-face {
+      font-family: 'Calligraphy';
+      src: local('Great Vibes'), local('Pinyon Script'), local('Brittany Signature'), local('Dancing Script'), local('Parisienne'), local('Alex Brush'), local('Allura'), local('Sacramento');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    :root, [data-theme="light"] {
+      --color-bg: #F5F0EB;
+      --color-cream: #EDE6DC;
+      --color-beige: #D9CCBC;
+      --color-taupe: #B8A99A;
+      --color-taupe-dark: #9A8B7A;
+      --color-brown: #7A6B5A;
+      --color-green: #5B7A5E;
+      --color-green-light: #6E8E71;
+      --color-text: #4A3F35;
+      --color-text-light: #8A7D70;
+      --color-white: #FDFBF8;
+      --color-card-bg: #FDFBF8;
+      --color-alt-bg: #FDFBF8;
+      --nav-bg: rgba(245, 240, 235, 0.95);
+      --color-footer-bg: #4A3F35;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #1C1915;
+      --color-cream: #2A2520;
+      --color-beige: #3D362E;
+      --color-taupe: #7A6E60;
+      --color-taupe-dark: #9A8D7E;
+      --color-brown: #C4B5A2;
+      --color-green: #7BA37E;
+      --color-green-light: #8FB892;
+      --color-text: #E8E0D6;
+      --color-text-light: #A69D90;
+      --color-white: #232019;
+      --color-card-bg: #262220;
+      --color-alt-bg: #201D19;
+      --nav-bg: rgba(28, 25, 21, 0.95);
+      --color-footer-bg: #141210;
+    }
+
+    html { transition: background-color 0.4s ease, color 0.4s ease; }
+    body, nav, section, footer { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+    }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-beige); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive; font-size: 1.3rem; color: var(--color-green); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-logo-img { height: 36px; width: auto; object-fit: contain; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .btn-back { text-decoration: none; color: var(--color-taupe-dark); font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.3s; }
+    .btn-back:hover { color: var(--color-brown); }
+
+    .theme-toggle { background: none; border: 1.5px solid var(--color-taupe); border-radius: 20px; padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; color: var(--color-taupe-dark); font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s; }
+    .theme-toggle:hover { border-color: var(--color-brown); color: var(--color-brown); }
+    .theme-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+    .theme-toggle .icon-moon { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+    .page-content { max-width: 720px; margin: 0 auto; padding: 120px 40px 80px; }
+
+    .btn-home { position: fixed; top: 80px; left: 24px; z-index: 99; width: 40px; height: 40px; border-radius: 50%; background: var(--color-card-bg); border: 1px solid var(--color-beige); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .btn-home:hover { background: var(--color-green); border-color: var(--color-green); }
+    .btn-home svg { width: 18px; height: 18px; stroke: var(--color-brown); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
+    .btn-home:hover svg { stroke: #fff; }
+
+    .page-header { text-align: center; margin-bottom: 56px; }
+    .page-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--color-green); margin-bottom: 16px; }
+    .page-header h1 { font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive; font-weight: 400; font-size: 3.2rem; color: var(--color-green); margin-bottom: 8px; }
+    .page-header .page-subtitle { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; color: var(--color-brown); }
+    .page-divider { width: 60px; height: 1.5px; background: var(--color-taupe); margin: 0 auto 56px; }
+
+    .method-intro { text-align: center; margin-bottom: 56px; }
+    .method-intro p { color: var(--color-text-light); font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 1.05rem; line-height: 2.2; margin-bottom: 8px; }
+    .method-intro p:last-child { margin-top: 20px; font-style: normal; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-size: 0.95rem; color: var(--color-taupe-dark); }
+    .method-intro .intro-divider { width: 40px; height: 1px; background: var(--color-beige); margin: 24px auto; }
+
+    .method-section { margin-bottom: 48px; }
+    .method-section h2 { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: 1.4rem; color: var(--color-brown); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--color-beige); }
+    .method-section p { color: var(--color-text-light); font-size: 0.95rem; line-height: 2; margin-bottom: 16px; }
+    .method-section ul { list-style: none; padding: 0; }
+    .method-section ul li { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.9; padding-left: 20px; position: relative; }
+    .method-section ul li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); }
+
+    .highlight-box { background: var(--color-card-bg); border: 1px solid var(--color-beige); border-radius: 4px; padding: 40px 48px; margin: 56px 0; text-align: center; position: relative; }
+    .highlight-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--color-green); border-radius: 0 0 4px 4px; }
+    .highlight-box p { color: var(--color-text-light); font-size: 1.05rem; line-height: 2; margin-bottom: 0; }
+    .highlight-box p em { color: var(--color-brown); font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.1rem; }
+
+    .cta-section { text-align: center; margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--color-beige); }
+    .cta-section p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px; }
+
+    .btn-agendar { display: inline-flex; align-items: center; gap: 10px; background: var(--color-green); color: #fff; border: none; padding: 16px 36px; font-family: inherit; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 50px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(91, 122, 94, 0.25); }
+    .btn-agendar:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(91, 122, 94, 0.35); }
+    .btn-agendar svg { width: 20px; height: 20px; fill: #fff; }
+
+    footer { background: var(--color-footer-bg); padding: 40px; text-align: center; }
+    footer p { color: var(--color-taupe); font-size: 0.8rem; letter-spacing: 1px; }
+    footer .footer-logo { font-family: 'Calligraphy', 'Snell Roundhand', 'Apple Chancery', 'Segoe Script', cursive; color: var(--color-green-light); font-size: 1.3rem; margin-bottom: 12px; }
+
+    @media (max-width: 600px) {
+      .page-content { padding: 100px 24px 60px; }
+      .page-header h1 { font-size: 2.2rem; }
+      .nav-inner { padding: 14px 24px; }
+      .highlight-box { padding: 24px; }
+      .btn-home { top: 72px; left: 16px; width: 36px; height: 36px; }
+      .btn-home svg { width: 16px; height: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo.png" alt="Logo" class="nav-logo-img">
+        <span>Instituto Rebeca Magalhães</span>
+      </a>
+      <div class="nav-right">
+        <a href="index.html" class="btn-back">Página inicial</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <a href="index.html" class="btn-home" aria-label="Voltar para página principal">
+    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+  </a>
+
+  <div class="page-content">
+    <div class="page-header">
+      <p class="page-label">Serviços</p>
+      <h1>Workshops</h1>
+      <p class="page-subtitle">Encontros temáticos e vivências em grupo</p>
+    </div>
+
+    <div class="page-divider"></div>
+
+    <div class="method-intro">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+      <p>Cras porttitor metus justo, ut fringilla velit fermentum a.</p>
+      <div class="intro-divider"></div>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+    </div>
+
+    <div class="method-section">
+      <h2>Como funcionam?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+    </div>
+
+    <div class="method-section">
+      <h2>Para quem são indicados?</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+        <li>Sed ut perspiciatis unde omnis iste natus error</li>
+        <li>Ut enim ad minima veniam, quis nostrum exercitationem</li>
+        <li>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum."</em></p>
+    </div>
+
+    <div class="cta-section">
+      <p>Quer saber mais sobre nossos workshops ou se inscrever?</p>
+      <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20Workshops%20do%20Instituto." class="btn-agendar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero saber mais
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-logo">Instituto Rebeca Magalhães</p>
+    <p>&copy; 2026 Instituto Rebeca Magalhães.</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) html.setAttribute('data-theme', savedTheme);
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) html.setAttribute('data-theme', 'dark');
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+
+</body>
+</html>
