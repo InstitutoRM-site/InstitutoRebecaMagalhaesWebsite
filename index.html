@@ -3,16 +3,6 @@
 <html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <script>
-  (function() {
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      document.documentElement.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  })();
-</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instituto Rebeca Magalhães | Psicóloga em Governador Valadares - Análise do Comportamento</title>
   <meta name="description" content="Instituto de Psicologia Comportamental em Governador Valadares, MG. Atendimento clínico para adultos, adolescentes e crianças, supervisão clínica e ensino em Análise do Comportamento. Agende sua sessão.">
@@ -362,6 +352,22 @@
     .petal:nth-child(14) { left: 65%; top: 5%; animation-duration: 23s; animation-delay: 10s; }
     .petal:nth-child(15) { right: 55%; top: 45%; animation-duration: 18s; animation-delay: 5.5s; }
     .petal:nth-child(16) { left: 5%; top: 45%; animation-duration: 26s; animation-delay: 7.5s; }
+    .petal:nth-child(17) { left: 18%; top: 30%; animation-duration: 20s; animation-delay: 11s; }
+    .petal:nth-child(18) { right: 20%; top: 50%; animation-duration: 22s; animation-delay: 2.5s; }
+    .petal:nth-child(19) { left: 48%; top: 90%; animation-duration: 17s; animation-delay: 12s; }
+    .petal:nth-child(20) { right: 40%; top: 65%; animation-duration: 24s; animation-delay: 0.8s; }
+    .petal:nth-child(21) { left: 82%; top: 20%; animation-duration: 19s; animation-delay: 6.5s; }
+    .petal:nth-child(22) { left: 35%; top: 55%; animation-duration: 21s; animation-delay: 13s; }
+    .petal:nth-child(23) { right: 5%; top: 35%; animation-duration: 25s; animation-delay: 4.5s; }
+    .petal:nth-child(24) { left: 60%; top: 85%; animation-duration: 18s; animation-delay: 14s; }
+    .petal:nth-child(25) { right: 30%; top: 15%; animation-duration: 23s; animation-delay: 1.2s; }
+    .petal:nth-child(26) { left: 90%; top: 60%; animation-duration: 20s; animation-delay: 9.5s; }
+    .petal:nth-child(27) { left: 3%; top: 70%; animation-duration: 26s; animation-delay: 15s; }
+    .petal:nth-child(28) { right: 18%; top: 90%; animation-duration: 16s; animation-delay: 3.2s; }
+    .petal:nth-child(29) { left: 72%; top: 12%; animation-duration: 22s; animation-delay: 10.5s; }
+    .petal:nth-child(30) { left: 25%; top: 42%; animation-duration: 19s; animation-delay: 7.8s; }
+    .petal:nth-child(31) { right: 50%; top: 78%; animation-duration: 24s; animation-delay: 16s; }
+    .petal:nth-child(32) { left: 15%; top: 5%; animation-duration: 21s; animation-delay: 5.2s; }
 
     @keyframes petalFloat {
       0% { opacity: 0; transform: translateY(0) rotate(0deg) scale(0.8); }
@@ -459,37 +465,35 @@
       margin-right: auto;
     }
 
-     .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--color-green);
-    color: #fff;
-    border: none;
-    padding: 18px 40px;
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25);
-    position: relative;
-    z-index: 1;
-  }
+    .btn-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--color-green);
+      color: #fff;
+      border: none;
+      padding: 18px 40px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25);
+    }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(74, 90, 43, 0.35);
-}
+    .btn-hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(74, 90, 43, 0.35);
+    }
 
-.btn-primary svg {
-  width: 22px; height: 22px;
-  fill: #fff;
-}
+    .btn-hero-cta svg {
+      width: 22px; height: 22px;
+      fill: #fff;
+    }
 
     /* ===== SECTIONS ===== */
     .container {
@@ -837,7 +841,66 @@
       line-height: 1.5;
       color: var(--color-text-light);
     }
-  
+
+    .btn-whatsapp-agendar {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--color-green);
+      color: #fff;
+      border: none;
+      padding: 18px 40px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-whatsapp-agendar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(74, 90, 43, 0.35);
+    }
+
+    .btn-whatsapp-agendar svg {
+      width: 22px; height: 22px;
+      fill: #fff;
+    }
+
+    /* ===== SOBRE ===== */
+    .sobre { background: var(--color-alt-bg); }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-image {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sobre-image::after {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(122, 107, 90, 0.2);
+      border-radius: 2px;
+    }
+
+    .sobre-text p { color: var(--color-text-light); margin-bottom: 20px; font-size: 0.95rem; }
 
     /* ===== SERVIÇOS ===== */
     .servicos-grid {
@@ -1289,18 +1352,6 @@
     }
 
     .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25); }
-    
-    .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
 
     /* ===== WHATSAPP FLOATING BUTTON ===== */
     .whatsapp-float {
@@ -1451,11 +1502,11 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="images/Logo.png" alt="" class="nav-logo-img">
+        <img src="images/Logo.png" alt="Logo" class="nav-logo-img">
       </a>
       <div class="nav-right">
         <ul class="nav-links" id="navLinks">
-          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#briefing">Sobre</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#equipe">Equipe</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -1477,7 +1528,7 @@
     <img src="images/logo-girassol.png" alt="" class="hero-sunflower">
     <img src="images/logo-girassol.png" alt="" class="hero-sunflower-left">
 
-    <!-- Floating petals (16) -->
+    <!-- Floating petals (32) -->
     <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
@@ -1494,25 +1545,41 @@
     <div class="petal"><svg width="40" height="22" viewBox="0 0 40 22"><path d="M2 11c0-5 8-10 18-10s18 5 18 10-8 10-18 10S2 16 2 11z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M20 1v20" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
     <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
-    
+    <!-- Extra petals 17-32 -->
+    <div class="petal"><svg width="24" height="14" viewBox="0 0 24 14"><path d="M2 7c0-3 4-6 10-6s10 3 10 6-4 6-10 6S2 10 2 7z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M12 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="20" height="12" viewBox="0 0 20 12"><path d="M2 6c0-2.5 3-5 8-5s8 2.5 8 5-3 5-8 5S2 8.5 2 6z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M10 1v10" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="30" height="16" viewBox="0 0 30 16"><path d="M2 8c0-3.5 5.5-7 13-7s13 3.5 13 7-5.5 7-13 7S2 11.5 2 8z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M15 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="38" height="20" viewBox="0 0 38 20"><path d="M2 10c0-4.5 7.5-9 17-9s17 4.5 17 9-7.5 9-17 9S2 14.5 2 10z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M19 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="22" height="12" viewBox="0 0 22 12"><path d="M2 6c0-2.5 3.5-5 9-5s9 2.5 9 5-3.5 5-9 5S2 8.5 2 6z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M11 1v10" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="32" height="18" viewBox="0 0 32 18"><path d="M2 9c0-4 6-8 14-8s14 4 14 8-6 8-14 8S2 13 2 9z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M16 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="24" height="14" viewBox="0 0 24 14"><path d="M2 7c0-3 4-6 10-6s10 3 10 6-4 6-10 6S2 10 2 7z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M12 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="36" height="20" viewBox="0 0 36 20"><path d="M2 10c0-4.5 7-9 16-9s16 4.5 16 9-7 9-16 9S2 14.5 2 10z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M18 1v18" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="28" height="16" viewBox="0 0 28 16"><path d="M2 8c0-3.5 5-7 12-7s12 3.5 12 7-5 7-12 7S2 11.5 2 8z" fill="#E8D9A0" stroke="#B8A060" stroke-width="0.8"/><path d="M14 1v14" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="20" height="10" viewBox="0 0 20 10"><path d="M2 5c0-2 3-4 8-4s8 2 8 4-3 4-8 4S2 7 2 5z" fill="#EDE6B0" stroke="#B8A060" stroke-width="0.8"/><path d="M10 1v8" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="34" height="18" viewBox="0 0 34 18"><path d="M2 9c0-4 6.5-8 15-8s15 4 15 8-6.5 8-15 8S2 13 2 9z" fill="#E5D498" stroke="#B8A060" stroke-width="0.8"/><path d="M17 1v16" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
+    <div class="petal"><svg width="26" height="14" viewBox="0 0 26 14"><path d="M2 7c0-3 4.5-6 11-6s11 3 11 6-4.5 6-11 6S2 10 2 7z" fill="#EBE0A8" stroke="#B8A060" stroke-width="0.8"/><path d="M13 1v12" stroke="#C4B070" stroke-width="0.5" opacity="0.5"/></svg></div>
 
     <h1>Instituto Rebeca Magalhães</h1>
     <p class="hero-subtitle">Psicologia Comportamental Aplicada</p>
     <p class="hero-services">Atendimento Clínico &middot; Supervisão &middot; Ensino</p>
     <div class="hero-slogan">
       <span class="slogan-intro">Te mostramos</span>
-      <span class="slogan-main">o caminho com conhecimento e afeto.</span>
+      <span class="slogan-main">O caminho com conhecimento e afeto.</span>
     </div>
-    <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-primary" target="_blank" rel="noopener">
+    <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-hero-cta" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Quero agendar uma sessão
     </a>
   </section>
 
   <!-- BRIEFING -->
-  <section class="briefing" id="sobre">
+  <section class="briefing" id="briefing">
     <div class="container">
-      <div class="briefing-content">  
+      <div class="briefing-content">
         <p class="section-label fade-in">O Instituto</p>
         <h2 class="section-title fade-in">Quem somos e no que acreditamos</h2>
         <div class="briefing-text fade-in">
@@ -1626,21 +1693,23 @@
       <div class="servicos-grid">
         <div class="servico-card fade-in">
           <div class="servico-icon">
-            <img src="images/Logo.png" alt="">
+            <img src="images/Logo.png" alt="Logo">
           </div>
           <h3>Psicoterapia Individual</h3>
           <p>Atendimento clínico individualizado com base na psicologia comportamental, focado em compreender e transformar padrões que impactam sua qualidade de vida.</p>
+          <a href="psicoterapia-individual.html" class="btn-saiba-mais-card">Saiba mais &rarr;</a>
         </div>
         <div class="servico-card fade-in">
           <div class="servico-icon">
-            <img src="images/Logo.png" alt="">
+            <img src="images/Logo.png" alt="Logo">
           </div>
-          <h3>Psicoterapia Online</h3>
-          <p>Sessões de psicoterapia por videoconferência com a mesma qualidade e profundidade do atendimento presencial, para quem precisa de flexibilidade.</p>
+          <h3>Workshops</h3>
+          <p>Encontros temáticos e vivências em grupo voltados ao autoconhecimento, ao desenvolvimento de habilidades emocionais e à construção de repertórios para a vida.</p>
+          <a href="workshops.html" class="btn-saiba-mais-card">Saiba mais &rarr;</a>
         </div>
         <div class="servico-card fade-in">
           <div class="servico-icon">
-            <img src="images/Logo.png" alt="">
+            <img src="images/Logo.png" alt="Logo">
           </div>
           <h3>Terapia de Casal — Método RM</h3>
           <p>Dupla condução clínica: cada parceiro é acompanhado individualmente por um psicólogo, enquanto o casal participa de sessões conjuntas com ambos os profissionais.</p>
@@ -1670,7 +1739,7 @@
           <p>Nossa equipe confirma seu agendamento em até 24h</p>
         </div>
       </div>
-      <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-primary fade-in" target="_blank" rel="noopener">
+      <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-whatsapp-agendar fade-in" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Quero agendar uma sessão
       </a>
@@ -1678,7 +1747,7 @@
   </section>
 
   <!-- ESTUDOS -->
-  <section class="estudos" id="estudos" style="display:none">
+  <section class="estudos" id="estudos">
     <div class="container">
       <p class="section-label fade-in">Estudos & Pesquisas</p>
       <h2 class="section-title fade-in">Produção acadêmica</h2>
@@ -1739,10 +1808,20 @@
             <p class="depoimento-author">Escola da Gente · Governador Valadares</p>
           </div>
         </div>
-       <div class="depoimento-nav">
-       <button id="depoPrev" aria-label="Anterior">&larr;</button>
-        <div class="depoimento-dots" id="depoimentoDots"></div>
-        <button id="depoNext" aria-label="Próximo">&rarr;</button>
+        <div class="depoimento-nav">
+          <button onclick="scrollDepoimentos(-1)" aria-label="Anterior">&larr;</button>
+          <div class="depoimento-dots">
+            <div class="depoimento-dot active"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+            <div class="depoimento-dot"></div>
+          </div>
+          <button onclick="scrollDepoimentos(1)" aria-label="Próximo">&rarr;</button>
         </div>
       </div>
     </div>
@@ -1772,8 +1851,8 @@
       <div class="equipe-block fade-in">
         <h3 class="equipe-block-title">Equipe Clínica</h3>
         <div class="equipe-grid">
-          <a href="equipe-rebeca.html" class="equipe-card">
-            <div class="equipe-avatar"><img src="images/equipe-rebeca.jpg" alt="Rebeca Magalhães" loading="lazy"></div>
+          <div class="equipe-card">
+            <div class="equipe-avatar"><img src="images/equipe-rebeca.jpg" alt="Rebeca Magalhães"></div>
             <div class="equipe-card-info">
               <h3>Rebeca Magalhães</h3>
               <p class="equipe-role">Psicóloga Clínica · Fundadora do Instituto</p>
@@ -1781,11 +1860,10 @@
               <span class="equipe-instagram">@rebecammagalhaes</span>
               <p class="equipe-desc">Psicóloga clínica com atuação baseada na Análise do Comportamento, dedicada a ajudar pessoas a entenderem o que mantém seus comportamentos e a construírem novas formas de agir diante do que sentem.</p>
               <p class="equipe-desc">Aqui, não se trata de controlar emoções, mas de aprender o que fazer com elas. Seu trabalho une ciência e afeto na condução clínica, com foco em mudanças reais, que possam ser sustentadas na vida cotidiana.</p>
-              <span class="equipe-link">Saiba mais &rarr;</span>
             </div>
-          </a>
-          <a href="equipe-rodrigo.html" class="equipe-card">
-            <div class="equipe-avatar"><img src="images/equipe-rodrigo.jpg" alt="Rodrigo Mendes" loading="lazy"></div>
+          </div>
+          <div class="equipe-card">
+            <div class="equipe-avatar"><img src="images/equipe-rodrigo.jpg" alt="Rodrigo Mendes"></div>
             <div class="equipe-card-info">
               <h3>Rodrigo Mendes</h3>
               <p class="equipe-role">Psicólogo Clínico</p>
@@ -1793,9 +1871,8 @@
               <span class="equipe-instagram">@rodrigomendespsicologo</span>
               <p class="equipe-desc">Atua com base na Análise do Comportamento, conduzindo processos terapêuticos com uma abordagem simples, acessível e implicada com a realidade de cada pessoa.</p>
               <p class="equipe-desc">Realiza atendimentos clínicos individuais e atua na terapia de casal a partir de um modelo desenvolvido no Instituto, conduzido em parceria entre dois terapeutas, permitindo uma leitura mais ampla e integrada das relações.</p>
-              <span class="equipe-link">Saiba mais &rarr;</span>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -1804,7 +1881,7 @@
         <h3 class="equipe-block-title">Formação e Apoio Clínico</h3>
         <div class="equipe-grid">
           <div class="equipe-card">
-            <div class="equipe-avatar"><img src="images/equipe-celine.jpg" alt="Celine Oliveira Barros" loading="lazy"></div>
+            <div class="equipe-avatar"><img src="images/equipe-celine.jpg" alt="Celine Oliveira Barros"></div>
             <div class="equipe-card-info">
               <h3>Celine Oliveira Barros</h3>
               <p class="equipe-role">Graduanda em Psicologia – Vancouver Island University, Canadá 🇨🇦</p>
@@ -1813,7 +1890,7 @@
             </div>
           </div>
           <div class="equipe-card">
-            <div class="equipe-avatar"><img src="images/equipe-julia.jpg" alt="Júlia Braga Leite"loading="lazy"></div>
+            <div class="equipe-avatar"><img src="images/equipe-julia.jpg" alt="Júlia Braga Leite"></div>
             <div class="equipe-card-info">
               <h3>Júlia Braga Leite</h3>
               <p class="equipe-role">Graduanda em Psicologia – Coastal Carolina University, Estados Unidos 🇺🇸</p>
@@ -1829,7 +1906,7 @@
         <h3 class="equipe-block-title">Práticas Integrativas</h3>
         <div class="equipe-grid">
           <div class="equipe-card">
-            <div class="equipe-avatar"><img src="images/equipe-gabriela.jpg" alt="Gabriela Magalhães" loading="lazy"></div>
+            <div class="equipe-avatar"><img src="images/equipe-gabriela.jpg" alt="Gabriela Magalhães"></div>
             <div class="equipe-card-info">
               <h3>Gabriela Magalhães</h3>
               <p class="equipe-role">Instrutora de Dança e Coreógrafa</p>
@@ -1866,15 +1943,9 @@
           </div>
         </div>
         <form class="contato-form fade-in" id="contatoForm">
-          <label for="contatoNome" class="sr-only">Nome</label>
-             <input type="text" placeholder="Nome" id="contatoNome" required>
-
-            <label for="contatoEmail" class="sr-only">E-mail</label>
-               <input type="email" placeholder="E-mail" id="contatoEmail" required>
-
-             <label for="contatoMsg" class="sr-only">Mensagem</label>
-            <textarea placeholder="Mensagem" id="contatoMsg" required></textarea>
-
+          <input type="text" placeholder="Nome" id="contatoNome" required>
+          <input type="email" placeholder="E-mail" id="contatoEmail" required>
+          <textarea placeholder="Mensagem" id="contatoMsg" required></textarea>
           <button class="btn" type="submit">Enviar Mensagem</button>
         </form>
       </div>
@@ -1897,13 +1968,7 @@
     // Depoimentos carousel
     let currentDepoimento = 0;
     const depoCards = document.querySelectorAll('.depoimento-card');
-    const dotsContainer = document.getElementById('depoimentoDots');
-depoCards.forEach((_, i) => {
-  const dot = document.createElement('div');
-  dot.className = 'depoimento-dot' + (i === 0 ? ' active' : '');
-  dotsContainer.appendChild(dot);
-});
-const depoDots = document.querySelectorAll('.depoimento-dot');
+    const depoDots = document.querySelectorAll('.depoimento-dot');
 
     function scrollDepoimentos(direction) {
       currentDepoimento += direction;
@@ -1914,19 +1979,6 @@ const depoDots = document.querySelectorAll('.depoimento-dot');
       depoCards[currentDepoimento].classList.add('active');
       depoDots[currentDepoimento].classList.add('active');
     }
-    document.getElementById('depoPrev').addEventListener('click', () => scrollDepoimentos(-1));
-    document.getElementById('depoNext').addEventListener('click', () => scrollDepoimentos(1));
-
-    let autoAdvance = setInterval(() => scrollDepoimentos(1), 5000);
-
-document.querySelector('.depoimentos-wrapper').addEventListener('mouseenter', () => {
-  clearInterval(autoAdvance);
-});
-
-document.querySelector('.depoimentos-wrapper').addEventListener('mouseleave', () => {
-  autoAdvance = setInterval(() => scrollDepoimentos(1), 5000);
-});
-
 
     // Navbar scroll
     const navbar = document.getElementById('navbar');
@@ -1969,32 +2021,18 @@ document.querySelector('.depoimentos-wrapper').addEventListener('mouseleave', ()
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-   document.getElementById('contatoForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const nome = document.getElementById('contatoNome').value.trim();
-  const email = document.getElementById('contatoEmail').value.trim();
-  const msg = document.getElementById('contatoMsg').value.trim();
-  if (!nome || !email || !msg) return;
-  const texto = encodeURIComponent(
-    'Olá! Meu nome é ' + nome + '.\nE-mail: ' + email + '\n\n' + msg
-  );
-  window.open('https://wa.me/5533988908889?text=' + texto, '_blank');
-
-  // Clear the fields
-  this.reset();
-
-  // Show a success message
-  const btn = this.querySelector('button[type="submit"]');
-  const original = btn.textContent;
-  btn.textContent = 'Mensagem enviada ✓';
-  btn.disabled = true;
-  btn.style.opacity = '0.7';
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.disabled = false;
-    btn.style.opacity = '1';
-  }, 4000);
-});
+    // Contato form → WhatsApp
+    document.getElementById('contatoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nome = document.getElementById('contatoNome').value.trim();
+      const email = document.getElementById('contatoEmail').value.trim();
+      const msg = document.getElementById('contatoMsg').value.trim();
+      if (!nome || !email || !msg) return;
+      const texto = encodeURIComponent(
+        'Olá! Meu nome é ' + nome + '.\nE-mail: ' + email + '\n\n' + msg
+      );
+      window.open('https://wa.me/5533988908889?text=' + texto, '_blank');
+    });
   </script>
 
 </body>
