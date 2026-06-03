@@ -1351,6 +1351,36 @@
     .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(74, 90, 43, 0.25); }
 
     /* ===== NOSSAS REDES ===== */
+    .instituto-anos {
+      background: var(--color-cream);
+    }
+
+    .anos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .anos-item {
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 1;
+    }
+
+    .anos-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .anos-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ===== REDES SOCIAIS ===== */
     .redes {
       background: var(--color-alt-bg);
     }
@@ -1525,6 +1555,7 @@
       .equipe-card { gap: 20px; padding: 24px; }
       .contato-grid { grid-template-columns: 1fr; gap: 40px; }
       .redes-grid { grid-template-columns: 1fr; }
+      .anos-grid { grid-template-columns: 1fr 1fr; }
       .estudo-item { grid-template-columns: 1fr; gap: 8px; }
       .estudo-tag { justify-self: start; }
       .briefing-values { grid-template-columns: 1fr; gap: 24px; }
@@ -1950,6 +1981,28 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- INSTITUTO PELOS ANOS -->
+  <section class="instituto-anos" id="instituto-anos">
+    <div class="container">
+      <p class="section-label fade-in">Nossa História</p>
+      <h2 class="section-title fade-in">Instituto pelos anos</h2>
+      <div class="anos-grid fade-in">
+        <div class="anos-item">
+          <img src="images/2B13E366-FAAA-44A9-B560-746E8C94C377.JPG" alt="Evento Alice no Diva — Instituto Rebeca Magalhães">
+        </div>
+        <div class="anos-item">
+          <img src="images/3B475329-4D0A-4187-B2EC-1B1CE64EAD4A.JPG" alt="Entrevista — Instituto Rebeca Magalhães">
+        </div>
+        <div class="anos-item">
+          <img src="images/46A4E81E-CA3F-42C5-A67C-BC646A3600C0.JPG" alt="Equipe e parceiros — Instituto Rebeca Magalhães">
+        </div>
+        <div class="anos-item">
+          <img src="images/52D23CAB-C3C5-4C5E-A5E0-DB390E243254.JPG" alt="Encontro do Instituto Rebeca Magalhães">
+        </div>
+      </div>
     </div>
   </section>
 
