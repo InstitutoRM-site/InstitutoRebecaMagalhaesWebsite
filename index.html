@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="light">
 <head>
-  <meta name="google-site-verification" content="0AmVHbAWyPCUjSn-l-Y6xpJE1-9q5i6DPkOgVks3eQM" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instituto Rebeca Magalhães | Psicóloga em Governador Valadares - Análise do Comportamento</title>
   <meta name="description" content="Instituto de Psicologia Comportamental em Governador Valadares, MG. Atendimento clínico para adultos, adolescentes e crianças, supervisão clínica e ensino em Análise do Comportamento. Agende sua sessão.">
+  <meta name="keywords" content="psicóloga Governador Valadares, psicologia comportamental, análise do comportamento, terapia comportamental, psicóloga clínica, atendimento psicológico, supervisão clínica, Instituto Rebeca Magalhães, psicólogo GV, terapia infantil, terapia de casal">
   <meta name="author" content="Instituto Rebeca Magalhães">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://institutorebecamagalhaes.com.br">
@@ -1132,11 +1132,15 @@
 
     .espaco-item {
       aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--color-cream), var(--color-beige));
-      background-size: cover;
-      background-position: center;
       border-radius: 6px;
       position: relative; overflow: hidden; cursor: pointer;
+    }
+
+    .espaco-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
 
@@ -1437,6 +1441,66 @@
       fill: currentColor;
     }
 
+    /* Cards simples (TikTok, YouTube) */
+    .redes-simples {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .rede-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-beige);
+      border-radius: 6px;
+      padding: 24px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .rede-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(122, 107, 90, 0.1);
+      border-color: var(--color-green);
+    }
+
+    .rede-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .rede-card-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--color-brown);
+    }
+
+    .rede-card-text h4 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--color-green);
+      margin-bottom: 2px;
+    }
+
+    .rede-card-text p {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+    }
+
     /* ===== WHATSAPP FLOATING BUTTON ===== */
     .whatsapp-float {
       position: fixed;
@@ -1555,6 +1619,7 @@
       .equipe-card { gap: 20px; padding: 24px; }
       .contato-grid { grid-template-columns: 1fr; gap: 40px; }
       .redes-grid { grid-template-columns: 1fr; }
+      .redes-simples { grid-template-columns: 1fr; }
       .anos-grid { grid-template-columns: 1fr 1fr; }
       .estudo-item { grid-template-columns: 1fr; gap: 8px; }
       .estudo-tag { justify-self: start; }
@@ -1653,7 +1718,7 @@
     <p class="hero-services">Atendimento Clínico &middot; Supervisão &middot; Ensino</p>
     <div class="hero-slogan">
       <span class="slogan-intro">Te mostramos</span>
-      <span class="slogan-main">o caminho com conhecimento e afeto.</span>
+      <span class="slogan-main">O caminho com conhecimento e afeto.</span>
     </div>
     <a href="https://wa.me/5533988908889?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20atendimento%20no%20Instituto%20Rebeca%20Magalh%C3%A3es." class="btn-hero-cta" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1896,10 +1961,10 @@
       <p class="section-label fade-in">Nosso Espaço</p>
       <h2 class="section-title fade-in">Conheça nossas salas</h2>
       <div class="espaco-grid fade-in">
-        <div class="espaco-item" style="background-image: url('images/recepcao.jpg')"><span class="espaco-label">Recepção e Acolhimento</span></div>
-        <div class="espaco-item" style="background-image: url('images/sala-infantil.jpg')"><span class="espaco-label">Sala Infantojuvenil e Grupos</span></div>
-        <div class="espaco-item" style="background-image: url('images/sala-atendimento.jpg')"><span class="espaco-label">Sala de Atendimento</span></div>
-        <div class="espaco-item" style="background-image: url('images/galeria.jpg')"><span class="espaco-label">Galeria</span></div>
+        <div class="espaco-item"><img src="images/recepcao.jpg" alt="Recepção e Acolhimento"><span class="espaco-label">Recepção e Acolhimento</span></div>
+        <div class="espaco-item"><img src="images/sala-infantil.jpg" alt="Sala Infantojuvenil e Grupos"><span class="espaco-label">Sala Infantojuvenil e Grupos</span></div>
+        <div class="espaco-item"><img src="images/sala-atendimento.jpg" alt="Sala de Atendimento"><span class="espaco-label">Sala de Atendimento</span></div>
+        <div class="espaco-item"><img src="images/galeria.jpg" alt="Galeria"><span class="espaco-label">Galeria</span></div>
       </div>
     </div>
   </section>
@@ -1969,7 +2034,7 @@
         <h3 class="equipe-block-title">Práticas Integrativas</h3>
         <div class="equipe-grid">
           <div class="equipe-card">
-            <div class="equipe-avatar"><img src="images/WhatsApp Image 2026-06-03 at 09.36.27.jpeg" alt="Gabriela Magalhães"></div>
+            <div class="equipe-avatar"><img src="images/equipe-gabriela.jpg" alt="Gabriela Magalhães"></div>
             <div class="equipe-card-info">
               <h3>Gabriela Magalhães</h3>
               <p class="equipe-role">Instrutora de Dança e Coreógrafa</p>
@@ -2010,7 +2075,7 @@
   <section class="redes" id="redes">
     <div class="container">
       <p class="section-label fade-in">Nossas Redes</p>
-      <h2 class="section-title fade-in">Siga-nos no Instagram</h2>
+      <h2 class="section-title fade-in">Acompanhe nas redes sociais</h2>
       <div class="redes-grid fade-in">
         <div class="redes-item">
           <div class="redes-embed">
@@ -2045,6 +2110,27 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <div class="redes-simples fade-in">
+        <a href="https://www.tiktok.com/@rebeca.mmagalhaes" class="rede-card" target="_blank" rel="noopener">
+          <div class="rede-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </div>
+          <div class="rede-card-text">
+            <h4>TikTok</h4>
+            <p>@rebeca.mmagalhaes</p>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@InstitutoRebecaMagalhaes" class="rede-card" target="_blank" rel="noopener">
+          <div class="rede-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+          </div>
+          <div class="rede-card-text">
+            <h4>YouTube</h4>
+            <p>@InstitutoRebecaMagalhães</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
